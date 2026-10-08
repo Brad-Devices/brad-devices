@@ -26,7 +26,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/BradDevicesOfficial/brad-devices/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/BradDevicesOfficial/brad-devices/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/Brad-Devices/brad-devices/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Brad-Devices/brad-devices/actions/workflows/ci.yml/badge.svg"></a>
 <p align="center">
   <img alt="C" src="https://img.shields.io/badge/C-8A6D1F?style=for-the-badge">&nbsp;
   <img alt="Assembly" src="https://img.shields.io/badge/Assembly-8A6D1F?style=for-the-badge">&nbsp;
@@ -90,7 +90,7 @@ python3 -m http.server 8000
 ## Contact
 
 - Email: brad.devices.official@gmail.com
-- GitHub: https://github.com/BradDevicesOfficial
+- GitHub: https://github.com/Brad-Devices
 
 ---
 
