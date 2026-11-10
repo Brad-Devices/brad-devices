@@ -1,52 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Published by tools/sync-sdcard.sh: the post-commit hook mirrors this repo to the sdcard, deploys site/, and pings IndexNow. -->
+     the sdcard and deploys site/ to production when a commit touches it. -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="P2axB0S18_f20T_ykvaIMlD3jegTPd6tuXpIwRgGPQw">
 <script>try{var t=localStorage.getItem("bdTheme");if(t==="light")document.documentElement.setAttribute("data-theme","light");}catch(e){}</script>
-<title>Brad Devices — The computer empire a 15-year-old is building in Africa</title>
-<meta name="description" content="Brad Devices is a 15-year-old founded computer company: an entire ecosystem — chips, GPUs, OS, memory and software — spec'd, shipped toolchain-first, from Africa. See what actually runs today.">
+<title>Brad Devices — The Vertically Integrated Silicon & Software Ecosystem</title>
+<meta name="description" content="Founded by a 15-year-old architect, Brad Devices is an entire ecosystem — chips, GPUs, OS, memory and software — spec'd, shipped toolchain-first, from Africa. See what actually runs today.">
 <meta name="keywords" content="Brad Devices, African tech, silicon, GPU, CPU, NPU, BradVector, RISC, Festus Bradley Nyadimo, technology from Africa">
-<link rel="canonical" href="https://brad-devices.vercel.app/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Brad Devices — Software before silicon. Receipts after that.">
-<meta property="og:description" content="A 15-year-old is building a complete computer ecosystem from Africa. Software ships first — silicon is designed. See the receipts.">
-<meta property="og:image" content="https://brad-devices.vercel.app/assets/brad-devices-wordmark/png/brad-devices-wordmark-transparent-black-fill-1024px.png">
-<meta property="og:url" content="https://brad-devices.vercel.app/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Brad Devices — the computer empire from Africa">
-<meta name="twitter:description" content="Chips, GPUs, an operating system, memory and a working toolchain — designed as one coherent ecosystem by a 15-year-old.">
 <meta name="theme-color" content="#0E1117">
 <link rel="icon" type="image/png" href="assets/brad-devices-logos/svg/brad-devices-icon-white.svg">
+<link rel="apple-touch-icon" href="assets/brad-devices-logos/png/brad-devices-icon-transparent-white-fill-1024px.png">
 <link rel="stylesheet" href="css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
+      "@id": "https://brad-devices.vercel.app/#org",
       "name": "Brad Devices",
+      "alternateName": [
+        "BradDevices",
+        "BradDevicesOfficial",
+        "Brad Devices Inc"
+      ],
+      "legalName": "Brad Devices",
+      "url": "https://brad-devices.vercel.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://brad-devices.vercel.app/assets/brad-devices-logos/svg/brad-devices-icon-white.svg",
+        "width": 512,
+        "height": 512
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://brad-devices.vercel.app/assets/brad-devices-wordmark/svg/brad-devices-wordmark-white.svg",
+        "width": 1420,
+        "height": 200
+      },
+      "foundingDate": "2025-07-05",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Kisumu, Kenya",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kisumu",
+          "addressRegion": "Nyanza",
+          "addressCountry": "KE"
+        }
+      },
+      "areaServed": "Worldwide",
       "slogan": "Software before silicon. Receipts after that.",
+      "description": "Brad Devices is a computer company founded by Festus Bradley Nyadimo in Kisumu, Kenya. Its BradVector instruction-set architecture and BradDev Kit toolchain are open source, publicly released and run today: the assembler, interpreter, debugger, profiler and reference test suite are installable, versioned and CI-verified. The BradSense-Renderer spatial and temporal cores ship as software and are measured by a gated metrics harness. The BradISA CPU and the Torox GPU family are designed and specified in a 1,738-line public specification but have not been fabricated. The company ships software and designs silicon; it does not yet manufacture hardware.",
+      "knowsAbout": [
+        "computer architecture",
+        "GPU architecture",
+        "ISA design",
+        "RISC ISA design",
+        "operating systems",
+        "unified memory",
+        "unstructured lattices",
+        "assembly language"
+      ],
       "email": "brad.devices.official@gmail.com",
+      "founder": {
+        "@id": "https://brad-devices.vercel.app/founder/#festus"
+      },
+      "sameAs": [
+        "https://github.com/Brad-Devices",
+        "https://x.com/BradDevices",
+        "https://medium.com/@bradleynyadimo",
+        "https://ke.linkedin.com/in/brad-devices-869a36440"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "brad.devices.official@gmail.com",
-        "contactType": "customer support"
+        "contactType": "customer support",
+        "availableLanguage": [
+          "en"
+        ]
       },
-      "founder": { "@type": "Person", "@id": "#festus", "name": "Festus Bradley Nyadimo" },
+      "hasPart": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "BradDev Kit",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Linux, macOS",
+          "url": "https://github.com/Brad-Devices/BradVector",
+          "downloadUrl": "https://github.com/Brad-Devices/BradVector/releases/tag/v0.1.0",
+          "license": "https://opensource.org/licenses/MIT",
+          "softwareVersion": "0.1.0",
+          "codeRepository": "https://github.com/Brad-Devices/BradVector",
+          "author": {
+            "@id": "https://brad-devices.vercel.app/#org"
+          },
+          "description": "Assembler, interpreter, debugger, cycle-level profiler and a single-binary dev CLI for BradVector. Shipped as tagged release v0.1.0 for linux-x86_64, linux-aarch64 and macos-arm64, each artifact published with a SHA-256 checksum and verified after download on a machine it was not built on."
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "BradVector toolchain",
+          "codeRepository": "https://github.com/Brad-Devices/BradVector",
+          "programmingLanguage": [
+            "C",
+            "Python",
+            "Verilog",
+            "VHDL",
+            "Assembly"
+          ],
+          "license": "https://opensource.org/licenses/MIT",
+          "author": {
+            "@id": "https://brad-devices.vercel.app/#org"
+          },
+          "description": "The open-source BradVector toolchain: the BVRT 32-lane SIMT virtual machine, the bradc assembler, bradgdb, BradTimeline, BVLibs and the reference test suite that gates every release."
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "#website",
+      "name": "Brad Devices",
       "url": "https://brad-devices.vercel.app/",
-      "description": "Reference-first compute company: a complete computer ecosystem designed from one coherent plan — silicon, memory, OS and software.",
-      "knowsAbout": ["GPU architecture", "computer architecture", "operating systems", "RISC ISA design"]
+      "publisher": {
+        "@id": "https://brad-devices.vercel.app/#org"
+      },
+      "description": "Honest receipts for a whole computer company. Software before silicon."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "#webpage",
+      "name": "Brad Devices — Software before silicon",
+      "url": "https://brad-devices.vercel.app/",
+      "description": "A 15-year-old is building a complete computer ecosystem from Africa. Software ships first — silicon is designed. See the receipts.",
+      "isPartOf": {
+        "@id": "#website"
+      },
+      "about": {
+        "@id": "https://brad-devices.vercel.app/#org"
+      },
+      "mainEntity": {
+        "@id": "#festus"
+      }
     },
     {
       "@type": "Person",
       "@id": "#festus",
       "name": "Festus Bradley Nyadimo",
       "jobTitle": "Founder & Chief Architect",
-      "knowsAbout": ["computer architecture", "GPU design", "ISA design", "operating systems"],
-      "description": "15-year-old founder of Brad Devices, building a full-stack computer ecosystem from Africa."
+      "description": "15-year-old founder of Brad Devices, building a full-stack computer ecosystem from Africa.",
+      "knowsAbout": [
+        "computer architecture",
+        "GPU design",
+        "ISA design",
+        "operating systems"
+      ],
+      "url": "https://brad-devices.vercel.app/founder",
+      "worksFor": {
+        "@id": "#org"
+      }
     }
   ]
 }</script>
+<link rel="canonical" href="https://brad-devices.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brad Devices — The Vertically Integrated Silicon & Software Ecosystem">
+<meta property="og:description" content="Founded by a 15-year-old architect, Brad Devices is an entire ecosystem — chips, GPUs, OS, memory and software — spec'd, shipped toolchain-first, from Africa. See what actually runs today.">
+<meta property="og:image" content="https://brad-devices.vercel.app/assets/og.png">
+<meta property="og:url" content="https://brad-devices.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brad Devices — The Vertically Integrated Silicon & Software Ecosystem">
+<meta name="twitter:description" content="Founded by a 15-year-old architect, Brad Devices is an entire ecosystem — chips, GPUs, OS, memory and software — spec'd, shipped toolchain-first, from Africa. See what actually runs today.">
+<meta name="twitter:image" content="https://brad-devices.vercel.app/assets/og.png">
 </head>
 <body>
 
@@ -65,12 +191,16 @@
     </button>
     <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
     <nav class="nav-links" aria-label="Primary">
-      <a href="/achievements/" class="active">What ships</a>
+      <a href="/achievements/">What ships</a>
       <a href="/products/">The Products</a>
       <a href="/ecosystem/">The Ecosystem</a>
       <a href="/founder/">The Founder</a>
+      <a href="/journal/">The Journal</a>
+      <a href="/social/">Social</a>
+      <a href="/now/">Now</a>
       <a href="/docs/">Spec Docs</a>
         <a href="/glossary/">The Name Map</a>
+      <a href="/press/">Press Kit</a>
       <a class="nav-cta" href="#proof">See it run</a>
     </nav>
   </div>
@@ -81,6 +211,14 @@
   <div class="container hero-inner" id="hero-inner">
     <span class="kicker"><span class="k-reg">0x01</span><span class="k-com"> // SHIPPED_TOOLCHAIN · SOFTWARE_BEFORE_SILICON · GEN_1</span></span>
     <img src="assets/brad-devices-wordmark/svg/brad-devices-wordmark-white.svg" alt="BRAD DEVICES" width="420" height="96" style="max-width:min(78vw,420px);height:auto;display:block;margin:26px auto 10px;font-weight:inherit;" data-receipt="THE WORDMARK · real SVG on a dark hero · ships in PNG 512→4096 / JPG / SVG — open any intro page, meet the brand at full sharpness">
+    <p class="entity-def" id="what-is-brad-devices"><strong>Brad Devices is a computer company
+    founded by Festus Bradley Nyadimo in Kisumu, Kenya.</strong> Its BradVector instruction-set
+    architecture and BradDev Kit toolchain are open source and run today: the assembler, interpreter,
+    debugger and profiler are installable, versioned, and gated by a CI test suite that fails the
+    release if it goes red. Its CPU and GPU are designed and documented in a public 1,738-line
+    specification, but they have not been fabricated. Brad Devices ships software and designs silicon.
+    It does not yet manufacture hardware.</p>
+
     <h1>I'm 15. I just designed<br>an <span class="kinetic">entire computer empire.</span><br>From Africa.</h1>
     <p class="sub">Governments and giants spend billions on one chip.<br>
     <strong>I</strong> designed the whole stack — the chips, the GPUs, the memory,
@@ -92,7 +230,7 @@
     </div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="n">15</div><div class="l">YEARS OLD</div></div>
-      <div class="hero-stat"><div class="n">52</div><div class="l">REFERENCE SPEC DOCS</div></div>
+      <div class="hero-stat"><div class="n" data-fact="corpus_docs">116</div><div class="l">REFERENCE SPEC DOCS</div></div>
       <div class="hero-stat"><div class="n">1</div><div class="l">COHERENT ECOSYSTEM</div></div>
       <div class="hero-stat"><div class="n">0</div><div class="l">TALK. ONLY SHIPS.</div></div>
     </div>
@@ -143,7 +281,10 @@
       <div class="term-frame top" aria-hidden="true">
         <span class="tc">┌</span><span class="trule"></span><span class="ttag">brad@braddevices:~$ bvrt --live</span><span class="trule"></span><span class="tc">┐</span>
       </div>
-      <div class="terminal" id="terminal-host" role="img" aria-label="Live execution of the real bradc assembler and BVRT interpreter — compiled to WebAssembly and run in your browser"></div>
+      <div class="terminal" id="terminal-host" role="img" aria-label="Live execution of the real bradc assembler and BVRT interpreter — compiled to WebAssembly and run in your browser">
+        <!-- Suite size is generated from a real ctest run, not typed.
+             See tools/measure.py. -->
+        <span id="ctest-count" data-fact="measured.ctest_total" hidden>24</span></div>
       <div class="term-frame bottom" aria-hidden="true">
         <span class="tc">└</span><span class="trule"></span><span class="ttag end">· SESSION 001 · LIVE · 0 ERRORS</span><span class="trule"></span><span class="tc">┘</span>
       </div>
@@ -201,11 +342,26 @@
 "bradc: assembled 10 instruction(s), 134 byte(s) -> saxpy.bvbc\n   0:  IADD  pred=0 dst=2 src1=1 src2=1 imm=0\n   1:  IADD  pred=0 dst=2 src1=2 src2=2 imm=0\n   2:  IADD  pred=0 dst=7 src1=16 src2=2 imm=0\n   3:  LOAD  pred=0 dst=3 src1=7 src2=0 imm=0\n   4:  IMUL  pred=0 dst=4 src1=3 src2=18 imm=0\n   5:  IADD  pred=0 dst=8 src1=17 src2=2 imm=0\n   6:  LOAD  pred=0 dst=5 src1=8 src2=0 imm=0\n   7:  IADD  pred=0 dst=6 src1=4 src2=5 imm=0\n   8:  STORE  pred=0 dst=6 src1=8 src2=0 imm=0\n   9:  EXIT  pred=0 dst=0 src1=0 src2=0 imm=0" },
     { cmd: "bvrt saxpy.bvbc", ok: true, out: "BVRT saxpy ok (32 lanes) — y[i] = a·x[i] + y[i] verified for all 32 lanes" },
     { cmd: "bradgdb saxpy.bvbc -b 4", ok: true, out: "break 4 set (IMUL S4, S3, S18)\nhalt @ PC=4 (IMUL S4, S3, S18)\nregs: PC=4 S3=1 S18=4\ncontinue -> BV_HALT - program completed" },
-    { cmd: "ctest --test-dir build", ok: true, out: "100% tests passed, 11 tests out of 11\nBradVector platform · green" }
+    { cmd: "ctest --test-dir build", ok: true, out: null }
   ];
+  function fillCount() {
+    /* Build the ctest summary line from the generated fact rather than a
+       literal, so adding a test cannot leave the homepage demo quoting a
+       stale total. */
+    var el = document.getElementById("ctest-count");
+    if (!el) return;
+    var n = el.textContent.trim();
+    for (var i = 0; i < session.length; i++) {
+      if (session[i].cmd.indexOf("ctest") === 0)
+        session[i].out = "100% tests passed, " + n + " tests out of " + n +
+                         "\nBradVector platform \u00b7 green";
+    }
+  }
+
   function init() {
     var host = document.getElementById("terminal-host");
     if (!host) return;
+    fillCount();
     if (window.BradLive && window.BradWasm) window.BradLive(host, session, { speed: 1 });
     else if (window.BradTerminal) window.BradTerminal(host, session, { speed: 1 });
   }
@@ -223,10 +379,10 @@
     kept on disk, filed, and cross-referenced.</p>
 
     <div class="stat-wall reveal">
-      <div class="stat"><div class="num"><span data-count="52">0</span></div><div class="lbl">Reference spec documents</div><div class="sub">one coherent architecture</div></div>
-      <div class="stat"><div class="num"><span data-count="15500">0</span><span class="suffix">+</span></div><div class="lbl">Lines of technical specification</div><div class="sub">every register &amp; wire</div></div>
-      <div class="stat"><div class="num"><span data-count="1689">0</span></div><div class="lbl">Line unified spec compendium</div><div class="sub">THE book · 39 pages, professionally drawn</div></div>
-      <div class="stat"><div class="num"><span data-count="11">0</span><span class="suffix">/11</span></div><div class="lbl">Tests passing, automatically</div><div class="sub">toolchain runs unattended</div></div>
+      <div class="stat"><div class="num"><span data-count="116" data-count-key="corpus_docs" data-fact="corpus_docs">116</span></div><div class="lbl">Reference spec documents</div><div class="sub">one coherent architecture</div></div>
+      <div class="stat"><div class="num"><span data-count="26600" data-count-key="corpus_lines_floor100" data-fact="corpus_lines_floor100">26600</span><span class="suffix">+</span></div><div class="lbl">Lines of technical specification</div><div class="sub">every register &amp; wire</div></div>
+      <div class="stat"><div class="num"><span data-count="1737" data-count-key="book_lines" data-fact="book_lines">1737</span></div><div class="lbl">Line unified spec compendium</div><div class="sub">THE book · 41 pages, professionally drawn</div></div>
+      <div class="stat"><div class="num"><span data-count="24" data-count-key="measured.ctest_total" data-fact="measured.ctest_total">24</span><span class="suffix" data-count-key="measured.ctest_total">/24</span></div><div class="lbl">Tests passing, automatically</div><div class="sub">ctest, on every push</div></div>
     </div>
 
     <div class="grid grid-4 reveal" style="margin-top:28px;">
@@ -278,14 +434,26 @@
       <div class="pillar">
         <h3>Memory</h3>
         <span class="tag badge gen1">Gen 1 — designed</span>
-        <p>No "video RAM" vs "system RAM" war. BradRAM + SPMP is one unified pool with an on-die L4 cache the GPU reads like its own notebook.</p>
-        <ul><li>BradRAM on-die L4 SRAM</li><li>SPMP — gigabytes, one pool</li><li>1200 Gb/s candidate-class fabric link</li></ul>
+        <p>No "video RAM" vs "system RAM" war. BradRAM + SPMP is one unified pool with a controller-side L4
+        cache the GPU reads like its own notebook.</p>
+        <ul><li>BradRAM — JEDEC dies, L4 SRAM on the controller</li><li>SPMP — gigabytes, one pool</li><li>1200 Gb/s candidate-class fabric link</li></ul>
         <a href="/ecosystem/#memory">The memory story →</a>
+      </div>
+      <div class="pillar">
+        <h3>Reconstruction</h3>
+        <span class="tag badge live">M0 shipped</span>
+        <p>BradSense-Render rebuilds the frame, not just the pixels. The spatial core runs today with
+        measured PSNR; the temporal ladder and the semantic experts are the road, tagged as such.</p>
+        <ul><li>Real pixels, measured 2× PSNR</li><li>39.57 dB bicubic + sharpen</li><li>Temporal core queued as M1</li></ul>
+        <a href="/docs/#bradsense">The BradSense receipts →</a>
       </div>
       <div class="pillar">
         <h3>The Operating System</h3>
         <span class="tag badge gen1">Gen 1 — designed</span>
         <p>A homegrown OS — Mobile through Compute — built for one hardware line. 7-year updates. 13-year support. No legacy, no churn.</p>
+        <p style="margin-top:12px;"><strong>BradSense-Render</strong> — the reconstruction engine — has already
+        shipped its software reference: a real spatial upscaler with measured 2× PSNR (39.43 dB bilinear,
+        39.57 dB bicubic + sharpen), gated in CI. The hardware is designed; the math is proven.</p>
         <ul><li>BradOS across every device</li><li>one driver stack everywhere</li><li>7yr OS · 13yr hardware support</li></ul>
         <a href="/ecosystem/#software">The software story →</a>
       </div>
@@ -366,6 +534,8 @@
         <p class="mono" style="margin-top:8px;">brad.devices.official@gmail.com</p>
         <p class="mono" style="margin-top:4px;"><a href="mailto:brad.devices.official@gmail.com">say hi →</a></p>
         <p class="mono" style="margin-top:4px;"><a href="https://github.com/Brad-Devices" target="_blank" rel="noopener">github.com/Brad-Devices</a></p>
+          <p class="mono" style="margin-top:4px;"><a href="https://x.com/BradDevices" target="_blank" rel="noopener">x.com/BradDevices</a></p>
+          <p class="mono" style="margin-top:4px;"><a href="https://ke.linkedin.com/in/brad-devices-869a36440" target="_blank" rel="noopener">linkedin.com/in/brad-devices</a></p>
       </div>
       <div>
         <h5>Explore</h5>
@@ -374,6 +544,9 @@
           <li><a href="/ecosystem/">The ecosystem</a></li>
           <li><a href="/products/">The product line</a></li>
           <li><a href="/founder/">The founder</a></li>
+          <li><a href="/journal/">The journal</a></li>
+          <li><a href="/social/">The social profiles</a></li>
+          <li><a href="/now/">The live workbench</a></li>
           <li><a href="/docs/">Spec docs</a></li>
         </ul>
       </div>
@@ -396,13 +569,15 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 Brad Devices · Built in Africa, for the World.</div>
+      <div>© 2026 Brad Devices — a project by BradVerse · Built in Africa, for the World.</div>
       <div class="mono">Reference-first: what ships is real. What targets is honest.</div>
     </div>
   </div>
 </footer>
 
-<script src="vendor/motion.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
 <script src="js/bradvector.js"></script>
 <script src="js/app.js"></script>
 <script>

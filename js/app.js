@@ -1,12 +1,13 @@
 /* Brad Devices brand site — shared interactions
-   Dark/light theme persistence + Motion (motion.dev, the Framer Motion
-   team's vanilla library) scroll-driven animations. */
+   Dark/light theme persistence + the motion stack: GSAP 3.13.0 +
+   ScrollTrigger 3.13.0 + Lenis 1.3.11, all vendored and hash-gated
+   (site/vendor/MANIFEST.md). Reduced-motion and no-JS readers get the
+   full page, always. */
 
 (function () {
   "use strict";
 
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var M = window.Motion || null;
 
   /* ---- Nav toggle ---- */
   var toggle = document.querySelector(".nav-toggle");
@@ -44,23 +45,41 @@
     syncThemeUI();
   }
 
-  /* ---- Reveal on scroll (Motion) ---- */
+  /* ---- Motion stack: GSAP 3.13.0 + ScrollTrigger 3.13.0 + Lenis 1.3.11 ----
+     Vendored and hash-gated (site/vendor/MANIFEST.md). Retired here: Motion
+     One — one engine, not two. Rules wired in, not hoped for:
+       - prefers-reduced-motion kills every entry in this section;
+       - Lenis smooths wheel on fine pointers only, never touch (the OS gives
+         mobile its own momentum, and mid-tier Android keeps its battery);
+       - content never hides behind CSS waiting for JS: .reveal carries a
+         <noscript> override on every page.                               */
+
+  if (window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+  if (!reduce && window.Lenis && window.matchMedia("(pointer: fine)").matches) {
+    var lenis = new Lenis({ syncTouch: false, anchors: true });
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.documentElement.classList.add("has-lenis");
+  }
+
   var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
   var show = function (el) { el.classList.add("visible"); };
 
-  if (M && revealEls.length && !reduce) {
+  if (revealEls.length && !reduce) {
     revealEls.forEach(function (el) {
       var grid = el.closest(".grid, .stat-wall, .timeline, .footer-grid");
       var idx = grid ? Array.prototype.indexOf.call(grid.children, el) : -1;
       var delay = idx < 0 ? 0 : Math.min(idx, 8) * 0.08;
-      M.inView(el, function () {
-        M.animate(el, { opacity: [0, 1], y: [26, 0] }, {
-          duration: 0.75,
-          delay: delay,
-          easing: [0.22, 1, 0.36, 1]
-        });
-        setTimeout(function () { show(el); }, delay * 1000 + 750);
-      }, { amount: 0.12, margin: "0px 0px -60px 0px" });
+      gsap.set(el, { opacity: 0, y: 26 });
+      ScrollTrigger.create({
+        trigger: el, start: "top 92%", once: true,
+        onEnter: function () {
+          gsap.to(el, { opacity: 1, y: 0, duration: 0.75, delay: delay, ease: [0.22, 1, 0.36, 1],
+                        onComplete: function () { show(el); } });
+        }
+      });
     });
   } else if (revealEls.length) {
     revealEls.forEach(show);
@@ -68,34 +87,52 @@
 
   /* ---- Scroll progress rail ---- */
   var bar = document.getElementById("scroll-progress");
-  if (M && bar && !reduce) {
-    M.scroll(function (p) {
-      bar.style.transform = "scaleX(" + p + ")";
-    }, { target: document.documentElement, offset: ["start start", "end end"] });
+  if (bar && !reduce) {
+    ScrollTrigger.create({
+      trigger: document.body, start: "top top", end: "bottom bottom",
+      onUpdate: function (self) { bar.style.transform = "scaleX(" + self.progress + ")"; }
+    });
   }
 
   /* ---- Hero scroll-linked fade + parallax (home only) ---- */
   var hero = document.getElementById("hero-home");
   var heroInner = document.getElementById("hero-inner");
-  if (M && hero && heroInner && !reduce) {
-    M.scroll(function (p) {
-      heroInner.style.opacity = String(1 - p * 0.7);
-      heroInner.style.transform = "translateY(" + (p * 70) + "px)";
-    }, { target: hero, offset: ["start start", "end start"] });
+  if (hero && heroInner && !reduce) {
+    gsap.to(heroInner, { opacity: 0.3, y: 70, ease: "none",
+      scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
+  }
+  /* ---- The workbench pilot: the /now/ board staggers in ---- */
+  var nowBoard = document.querySelector(".now-card");
+  if (nowBoard && !reduce) {
+    gsap.from(".now-card", { opacity: 0, y: 30, duration: 0.7, ease: "power3.out", stagger: 0.08,
+      scrollTrigger: { trigger: nowBoard.closest(".grid"), start: "top 88%", once: true } });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("visible"); });
+  }
   }
 
-  /* ---- Animated counters ---- */
+  /* ---- Animated counters ----
+   * The server-rendered HTML already carries the real value. Read it as the
+   * animation's start point so a JS-enabled reader never sees the number
+   * flash to zero; the count-up only runs when the markup holds a different
+   * placeholder (for example, an un-baked page). Crawlers and no-JS readers
+   * get the final number from the DOM either way.
+   */
   var counters = document.querySelectorAll("[data-count]");
   function runCounter(el) {
     var target = parseFloat(el.getAttribute("data-count"));
     var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+    var rendered = parseFloat(String(el.textContent).replace(/[^0-9.-]/g, ""));
+    var start = isFinite(rendered) ? rendered : 0;
+    if (!isFinite(target)) return;
+    if (start === target) { el.textContent = target.toFixed(decimals); return; }
     var dur = 1400;
     var t0 = null;
     function step(ts) {
       if (!t0) t0 = ts;
       var p = Math.min((ts - t0) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = (target * eased).toFixed(decimals);
+      el.textContent = (start + (target - start) * eased).toFixed(decimals);
       if (p < 1) requestAnimationFrame(step);
       else el.textContent = target.toFixed(decimals);
     }
