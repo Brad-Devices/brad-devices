@@ -1,0 +1,18 @@
+{
+  "book_lines": 1737,
+  "corpus_docs": 120,
+  "corpus_lines": 27905,
+  "corpus_lines_floor100": 27900,
+  "corpus_lines_with_archive": 28797,
+  "generated_utc": "2026-11-13T00:06:29Z",
+  "glossary_names": 119,
+  "journal_posts": 22,
+  "journal_posts_2025": 21,
+  "measured": {
+    "ctest_status": "listed",
+    "ctest_total": 24,
+    "measured_at_build": "relbuild"
+  },
+  "site_pages": 14,
+  "toolchain_tools": 4
+}

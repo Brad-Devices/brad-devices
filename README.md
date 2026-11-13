@@ -58,21 +58,21 @@ Nothing is dressed up. No invented benchmarks, no pretend silicon.
 - **Silicon** — BradChip fuses CPU + GPU + NPU + the BradFusion fabric on one package (Lite P2+E4 → Max P8+E8). **BradXon** is the flagship: an Adaptive Neural Fabric that reallocates power, clock, and fabric budget to the workload — *budget, not silicon* (DESIGNED Gen 1).
 - **GPU** — every **Torox** die (BFT100 integrated, BGT100 dedicated, BAT100 datacenter) runs the same **BradVector** engine. Write a kernel once; it runs from phone to rack.
 - **Memory** — **BradRAM** (on-die L4 SRAM) + **SPMP** (unified LPDDR pool) = one pool. No more "VRAM vs the rest" — the wire that pretends to be a wall is gone.
-- **OS** — **BradOS** across Mobile / Slate / Compute / Nano editions, with the **Kinetic Unified Driver** speaking Vulkan 1.4, DirectX 12 Ultimate, Metal 3, SYCL 2020. One driver stack; no driver zoo.
+- **OS** — **BradOS** across Phone / Max / Lite / X editions, with the **Kinetic Unified Driver** speaking Vulkan 1.4, DirectX 12 Ultimate, Metal 3, SYCL 2020. One driver stack; no driver zoo.
 - **Products** — **BradMatrix** laptops, **BradOS Compute** workstations/servers, and the **BradAxis** console (Torox in a box, Nexus controller) — every device an instance of the same architecture.
 - **Toolchain** — ships *before* the silicon: `bradc` assembler, **BVRT** (32-lane SIMT interpreter), `bradgdb`, **BradTimeline**, `braddev`, `bradlib.h`, the **TIFA** AI toolchain, and **BMS** cloud services. All stdlib-only, all runnable today.
 
 ## The proof
 
-- **The book** — a 1,689-line unified compendium: 52 reference chapters, every register accounted for. Ships as a [39-page branded PDF](https://brad-devices.vercel.app/assets/BRAD_DEVICES_COMPLETE_SPEC.pdf).
+- **The book** — a 1,737-line unified compendium: 120 reference documents, every register accounted for. Ships as a [41-page branded PDF](https://brad-devices.vercel.app/assets/BRAD_DEVICES_COMPLETE_SPEC.pdf).
 - **The specs** — [BradISA](https://brad-devices.vercel.app/assets/specs/bradisa_spec.pdf), [BradISA v2 (VSET vector)](https://brad-devices.vercel.app/assets/specs/bradisa_v2_ext.pdf), [BradGFX](https://brad-devices.vercel.app/assets/specs/bradgfx_arch.pdf), [BradXon platform](https://brad-devices.vercel.app/assets/specs/bradxon_platform.pdf), [product portfolio](https://brad-devices.vercel.app/assets/specs/product_portfolio.pdf), and more, all linked from the site.
-- **It runs** — the toolchain executes unattended in CI: `braddev test` 11/11 green, saxpy across all 32 lanes, round-trip bytecode tests, and an in-browser wasm build of the platform API.
+- **It runs** — the toolchain executes unattended in CI: `braddev test` 37 checks green, saxpy across all 32 lanes, round-trip bytecode tests, and an in-browser wasm build of the platform API.
 
 ## Structure
 
 ```
 index.html       home — the pitch and the receipts
-docs/            the specs, the 52-chapter tree
+docs/            the specs, the 120-document tree
 products/        every device, tagged SHIPPED / DESIGNED / VISION
 ecosystem/       the six-part machine
 founder/         the working-toolchain argument

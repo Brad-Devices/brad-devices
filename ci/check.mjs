@@ -31,6 +31,29 @@ function walk(dir, out = []) {
   return out;
 }
 
+/* Resolve a site URL the way a browser would, not the way a filesystem would.
+ *
+ * A script src is a URL: "/js/app.js" is served from the domain root, and
+ * "../vendor/x.js" on a root-level page still resolves inside the site.
+ * Joining both against the page's own directory -- which is what this did --
+ * looked for "/repo/journal/vendor/motion.min.js" and "/vendor/lenis.min.js"
+ * one level ABOVE the repo, so the checker failed on files the browser loads
+ * fine. A gate that cries wolf about correct pages is a gate people stop
+ * reading, and the 14 failures it reported were 14 false alarms.
+ */
+function siteTarget(fromFile, urlPath) {
+  const clean = urlPath.split("?")[0].split("#")[0];
+  const rooted = clean.startsWith("/");
+  const base = rooted ? ROOT : dirname(fromFile);
+  const rel = posix.normalize(rooted ? "." + clean : clean);
+  let target = normalize(join(base, rel));
+  // Clamp at the site root: nothing may reach outside the published site.
+  const outside = posix.relative(ROOT, target);
+  if (outside.startsWith(".."))
+    target = normalize(join(ROOT, outside.replace(/^(\.\.\/)+/, "")));
+  return target;
+}
+
 /* --- 1. HTML script balance + inline compile + src existence ----------- */
 for (const html of walk(ROOT)) {
   const rel = posix.relative(posix.normalize(ROOT), posix.normalize(html));
@@ -52,7 +75,7 @@ for (const html of walk(ROOT)) {
     const srcMatch = /\bsrc=(["'])([^"']+)\1/.exec(attrs);
     checks++;
     if (srcMatch) {
-      const target = normalize(join(dirname(html), posix.normalize(srcMatch[2])));
+      const target = siteTarget(html, srcMatch[2]);
       if (!existsSync(target)) fail(`${rel}: script src="${srcMatch[2]}" not found`);
       continue;
     }
@@ -110,7 +133,7 @@ for (const f of ["sitemap.xml", "robots.txt"]) {
     checks++;
     const clean = loc[1].split("//")[1] || loc[1];
     const pathname = clean.includes("/") ? clean.slice(clean.indexOf("/")) : "/";
-    const target = join(ROOT, posix.normalize(pathname === "/" ? "index.html" : pathname));
+    const target = siteTarget(join(ROOT, "index.html"), pathname);
     if (!existsSync(target)) fail(`${f}: ${loc[1]} does not resolve to a file`);
   }
   if (f === "robots.txt" && !/sitemap:/i.test(txt)) fail("robots.txt does not reference a sitemap");

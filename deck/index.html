@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Deck — Brad Devices</title>
+<meta name="description" content="The vertically integrated computing ecosystem from Kisumu, Kenya — CPU, GPU, NPU, memory, storage, OS, drivers and toolchain. Software before silicon. Receipts after that.">
+<meta name="theme-color" content="#0E1117">
+<link rel="canonical" href="https://brad-devices.vercel.app/deck">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pitch Deck — Brad Devices">
+<meta property="og:description" content="Software before silicon. Receipts after that. The vertically integrated computing ecosystem from Kisumu, Kenya.">
+<meta property="og:image" content="https://brad-devices.vercel.app/assets/og.png">
+<meta property="og:url" content="https://brad-devices.vercel.app/deck">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pitch Deck — Brad Devices">
+<meta name="twitter:description" content="Software before silicon. Receipts after that.">
+<meta name="twitter:image" content="https://brad-devices.vercel.app/assets/og.png">
+<link rel="icon" type="image/png" href="../assets/brad-devices-logos/svg/brad-devices-icon-white.svg">
+<link rel="apple-touch-icon" href="../assets/brad-devices-logos/png/brad-devices-icon-transparent-white-fill-1024px.png">
+<script>try{var t=localStorage.getItem("brad-theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");}catch(e){}</script>
+<style>
+  /* Self-contained on purpose: the deck has to survive being opened from a
+     USB stick, emailed as a single file, or viewed without the site. It borrows
+     the site's palette but does not depend on the site stylesheet. */
+  :root{
+    --bg:#0E1117; --bg2:#171C26; --bg3:#12161F; --line:#2A3342;
+    --text:#E9ECF1; --muted:#A7AFBD; --faint:#7C8CA1;
+    --gold:#C9A227; --gold-l:#E8D48F; --gold-d:#8A7320;
+    --live:#C9A227; --vision:#6A7385;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Roboto Mono",monospace;
+  }
+  :root[data-theme="light"]{
+    --bg:#F5F7FA; --bg2:#FFFFFF; --bg3:#E9EDF3; --line:#D6DEE9;
+    --text:#151B28; --muted:#46566C; --faint:#6B7A8F;
+    --gold:#7A5E10; --gold-l:#6E560E; --gold-d:#9C7A12; --live:#7A5E10;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--sans)}
+  .deck{position:relative}
+  .slide{
+    min-height:100vh;display:none;flex-direction:column;justify-content:center;
+    padding:5vh 6vw;position:relative;border-bottom:1px solid var(--line);
+  }
+  .slide.on{display:flex}
+  .kicker{
+    font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:18px;
+  }
+  h1{font-size:clamp(30px,5.2vw,58px);line-height:1.08;margin:0 0 14px;letter-spacing:-.02em}
+  h2{font-size:clamp(24px,3.6vw,40px);line-height:1.14;margin:0 0 18px;letter-spacing:-.015em}
+  p{font-size:clamp(15px,1.5vw,19px);line-height:1.62;color:var(--muted);max-width:62ch;margin:0 0 14px}
+  p strong{color:var(--text)}
+  .lead{font-size:clamp(17px,1.9vw,24px);color:var(--text);max-width:56ch}
+  .gold{color:var(--gold)}
+  .mono{font-family:var(--mono)}
+  ul{color:var(--muted);font-size:clamp(15px,1.45vw,18px);line-height:1.72;max-width:62ch;padding-left:1.1em;margin:0 0 14px}
+  li{margin-bottom:7px}
+  li strong{color:var(--text)}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .card{background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .card h3{margin:0 0 8px;font-size:16px;letter-spacing:.01em}
+  .card p{font-size:14px;margin:0;line-height:1.6}
+  .stat{display:flex;flex-direction:column;gap:2px;padding:14px 16px;background:var(--bg3);border:1px solid var(--line);border-radius:10px}
+  .stat .n{font-size:clamp(22px,3.2vw,34px);font-weight:700;color:var(--gold);line-height:1.05}
+  .stat .l{font-family:var(--mono);font-size:11.5px;color:var(--faint);letter-spacing:.04em}
+  .tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+       padding:3px 8px;border-radius:4px;vertical-align:middle}
+  .tag.live{background:var(--live);color:#0E1117;font-weight:700}
+  .tag.gen1{background:transparent;color:var(--gold);border:1px solid var(--gold-d)}
+  .tag.vision{background:transparent;color:var(--vision);border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+  td,th{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:500}
+  td:first-child{font-family:var(--mono);color:var(--gold);white-space:nowrap}
+  .foot{position:absolute;left:6vw;bottom:2.2vh;font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.05em}
+  .brand{position:absolute;right:6vw;bottom:2.2vh;font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.14em}
+  .bar{position:fixed;left:0;bottom:0;height:2px;background:var(--gold);z-index:20;transition:width .2s ease}
+  .nav{position:fixed;right:14px;bottom:12px;z-index:21;display:flex;gap:8px;align-items:center;
+       font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .nav button{background:var(--bg3);color:var(--muted);border:1px solid var(--line);border-radius:6px;
+       padding:5px 11px;cursor:pointer;font-family:var(--mono);font-size:12px}
+  .nav button:hover{border-color:var(--gold);color:var(--gold)}
+  .nav button[disabled]{opacity:.35;cursor:default}
+  .quote{border-left:2px solid var(--gold);padding:4px 0 4px 20px;margin:6px 0 18px;
+         font-size:clamp(17px,2vw,25px);line-height:1.45;color:var(--text);max-width:52ch}
+  .cite{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.06em;margin-top:6px}
+  @media (max-width:760px){ .grid2{grid-template-columns:1fr} .slide{padding:4vh 6vw} }
+  @media print{
+    .slide{display:flex!important;page-break-after:always;min-height:auto;padding:18mm 16mm}
+    .nav,.bar,.theme{display:none!important}
+    .slide:last-child{page-break-after:auto}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@type": "Organization",
+  "@id": "https://brad-devices.vercel.app/#org",
+  "name": "Brad Devices",
+  "alternateName": [
+    "BradDevices",
+    "BradDevicesOfficial",
+    "Brad Devices Inc"
+  ],
+  "legalName": "Brad Devices",
+  "url": "https://brad-devices.vercel.app/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://brad-devices.vercel.app/assets/brad-devices-logos/svg/brad-devices-icon-white.svg",
+    "width": 512,
+    "height": 512
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://brad-devices.vercel.app/assets/brad-devices-wordmark/svg/brad-devices-wordmark-white.svg",
+    "width": 1420,
+    "height": 200
+  },
+  "foundingDate": "2025-07-05",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Kisumu, Kenya",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kisumu",
+      "addressRegion": "Nyanza",
+      "addressCountry": "KE"
+    }
+  },
+  "areaServed": "Worldwide",
+  "slogan": "Software before silicon. Receipts after that.",
+  "description": "Brad Devices is a computer company founded by Festus Bradley Nyadimo in Kisumu, Kenya. Its BradVector instruction-set architecture and BradDev Kit toolchain are open source, publicly released and run today: the assembler, interpreter, debugger, profiler and reference test suite are installable, versioned and CI-verified. The BradSense-Renderer spatial and temporal cores ship as software and are measured by a gated metrics harness. The BradISA CPU and the Torox GPU family are designed and specified in a 1,737-line public specification but have not been fabricated. The company ships software and designs silicon; it does not yet manufacture hardware.",
+  "knowsAbout": [
+    "computer architecture",
+    "GPU architecture",
+    "ISA design",
+    "RISC ISA design",
+    "operating systems",
+    "unified memory",
+    "unstructured lattices",
+    "assembly language"
+  ],
+  "email": "brad.devices.official@gmail.com",
+  "founder": {
+    "@id": "https://brad-devices.vercel.app/founder/#festus"
+  },
+  "sameAs": [
+    "https://github.com/Brad-Devices",
+    "https://x.com/BradDevices",
+    "https://medium.com/@bradleynyadimo",
+    "https://ke.linkedin.com/in/brad-devices-869a36440"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "brad.devices.official@gmail.com",
+    "contactType": "customer support",
+    "availableLanguage": [
+      "en"
+    ]
+  },
+  "hasPart": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "BradDev Kit",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux, macOS",
+      "url": "https://github.com/Brad-Devices/BradVector",
+      "downloadUrl": "https://github.com/Brad-Devices/BradVector/releases/tag/v0.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "softwareVersion": "0.1.0",
+      "codeRepository": "https://github.com/Brad-Devices/BradVector",
+      "author": {
+        "@id": "https://brad-devices.vercel.app/#org"
+      },
+      "description": "Assembler, interpreter, debugger, cycle-level profiler and a single-binary dev CLI for BradVector. Shipped as tagged release v0.1.0 for linux-x86_64, linux-aarch64 and macos-arm64, each artifact published with a SHA-256 checksum and verified after download on a machine it was not built on."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "BradVector toolchain",
+      "codeRepository": "https://github.com/Brad-Devices/BradVector",
+      "programmingLanguage": [
+        "C",
+        "Python",
+        "Verilog",
+        "VHDL",
+        "Assembly"
+      ],
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {
+        "@id": "https://brad-devices.vercel.app/#org"
+      },
+      "description": "The open-source BradVector toolchain: the BVRT 32-lane SIMT virtual machine, the bradc assembler, bradgdb, BradTimeline, BVLibs and the reference test suite that gates every release."
+    }
+  ],
+  "@context": "https://schema.org"
+}
+</script>
+</head>
+<body>
+<div class="deck">
+
+<!-- 1 -->
+<section class="slide on">
+  <div class="kicker">Kisumu, Kenya · 2026</div>
+  <h1>Software before silicon.<br><span class="gold">Receipts after that.</span></h1>
+  <p class="lead">We design the whole machine, and we ship the software that builds it.</p>
+  <p>CPU · GPU · NPU · memory · storage · OS · drivers · toolchain — one plan, one roof.</p>
+  <p><strong>Festus Bradley Nyadimo</strong> — The Architect, founder. Fifteen, self-taught, sole builder.</p>
+  <div class="foot">Brad Devices</div><div class="brand">01 / 12</div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="kicker">The problem</div>
+  <h2>Nobody owns the whole machine.</h2>
+  <p>The stack is closed in layers, and no party is accountable across them.</p>
+  <div class="grid2">
+    <div class="card"><h3>Instruction sets</h3><p>one set of companies</p></div>
+    <div class="card"><h3>Memory controllers</h3><p>another</p></div>
+    <div class="card"><h3>Operating systems</h3><p>a third</p></div>
+    <div class="card"><h3>Drivers</h3><p>a fourth</p></div>
+  </div>
+  <p style="margin-top:20px;">Every boundary was reasonable when it was drawn. A decade later, a decade of
+  compute progress went into faster clouds, faster cryptography and faster inference rental —
+  <strong>rent, not ownership</strong>.</p>
+  <div class="foot">Brad Devices</div><div class="brand">02 / 12</div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="kicker">Why this is not a fintech story</div>
+  <h2>The doors the West believes are open.</h2>
+  <p>African technology is celebrated for fintech and agritech. That is not a coincidence — it is
+  where the expectation is.</p>
+  <p>Designing instruction sets, memory controllers and operating systems does not go through those
+  doors. <strong>It builds new ones.</strong></p>
+  <p>A country that imports every layer has no leverage at any of them.</p>
+  <div class="foot">Brad Devices</div><div class="brand">03 / 12</div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <div class="kicker">The architecture</div>
+  <h2>Two instruction sets, on purpose.</h2>
+  <table>
+    <tr><th></th><th>BradISA</th><th>BradVector</th></tr>
+    <tr><td>Runs on</td><td>CPU cores — Falcon, Kestrel, Phoenix</td><td>Torox GPU dies — BGT, BFT, BAT</td></tr>
+    <tr><td>Model</td><td>32-bit scalar RISC</td><td>dual-issue SIMT</td></tr>
+    <tr><td>Threads</td><td>one stream</td><td>32-thread warps</td></tr>
+    <tr><td>Registers</td><td>16 × 32-bit</td><td>256 scalar + 64 × 512-bit vector</td></tr>
+    <tr><td>Encoding</td><td>32-bit fixed</td><td>64-bit fixed</td></tr>
+  </table>
+  <p style="margin-top:20px;">They meet on the <strong>BradFusion</strong> fabric and share <strong>SPMP</strong> memory.
+  They do not share instructions.</p>
+  <div class="foot">Brad Devices</div><div class="brand">04 / 12</div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="kicker">Memory</div>
+  <h2>SPMP — one pool, not a hierarchy to argue about.</h2>
+  <p>The Super Power Memory Pool replaces the CPU-side / GPU-side split with a single shared
+  address space across the fusion fabric, so a kernel and the engine feeding it can touch the same
+  bytes without a copy.</p>
+  <p>Underneath, <strong>BradRAM uses standard JEDEC DRAM dies</strong>. The intelligence sits on a
+  separate Brad controller die as an L4 SRAM assistant cache. There is no custom Brad DRAM die —
+  and we would rather say that plainly than let a reader assume one.</p>
+  <div class="foot">Brad Devices</div><div class="brand">05 / 12</div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="kicker">What ships today</div>
+  <h2>Software first. <span class="tag live">SHIPPED</span></h2>
+  <div class="grid2">
+    <div class="stat"><span class="n"><span data-fact="measured.ctest_total">24</span>/<span data-fact="measured.ctest_total">24</span></span><span class="l">CTEST SUITE GREEN</span></div>
+    <div class="stat"><span class="n">v0.1.0</span><span class="l">TAGGED RELEASE</span></div>
+    <div class="stat"><span class="n">9</span><span class="l">ARTIFACTS · 3 PLATFORMS</span></div>
+    <div class="stat"><span class="n">SHA-256</span><span class="l">ON EVERY ARTIFACT</span></div>
+  </div>
+  <p style="margin-top:20px;">Assembler, 32-lane SIMD interpreter, one-binary developer CLI, debugger,
+  cycle-level profiler, reference driver layer, and BVML/BVN math and neural libraries tested to
+  exact floating-point values.</p>
+  <div class="foot">Brad Devices</div><div class="brand">06 / 12</div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="kicker">The receipt that matters</div>
+  <h2>A downloadable binary and a passing test run are the same event.</h2>
+  <p>The release pipeline builds linux-x86_64, linux-aarch64 and macos-arm64 from one tag and
+  <strong>refuses to publish unless the full suite is green</strong>. Then I downloaded my own
+  release on a machine I did not build it on, checked the checksum, and ran it:</p>
+  <p class="mono" style="background:var(--bg3);border:1px solid var(--line);border-radius:8px;padding:14px 18px;color:var(--text)">
+    BradDev Kit v0.1.0 (reference)<br>all checks PASSED</p>
+  <p>If the binary and its own tests ever disagreed with what the release claimed, there would be no
+  release.</p>
+  <div class="foot">Brad Devices</div><div class="brand">07 / 12</div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="kicker">The specification</div>
+  <h2>Written down, cross-checked, public.</h2>
+  <div class="grid2">
+    <div class="stat"><span class="n"><span data-fact="corpus_docs">120</span></span><span class="l">REFERENCE DOCUMENTS</span></div>
+    <div class="stat"><span class="n"><span data-fact="corpus_lines|comma">27,905</span></span><span class="l">LINES OF SPECIFICATION</span></div>
+    <div class="stat"><span class="n"><span data-fact="book_lines|comma">1,737</span></span><span class="l">UNIFIED BOOK · 41 PAGES</span></div>
+    <div class="stat"><span class="n"><span data-fact="glossary_names">119</span></span><span class="l">NAMES DEFINED</span></div>
+  </div>
+  <p style="margin-top:20px;">Every number on these slides is <strong>generated from the repository at build
+  time</strong> and verified before publication. If one is wrong, the deploy fails rather than the
+  deck lying.</p>
+  <div class="foot">Brad Devices</div><div class="brand">08 / 12</div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <div class="kicker">Hardware</div>
+  <h2>Designed. <span class="tag gen1">DESIGNED</span></h2>
+  <p>BradCore and BradXon CPUs · Torox BGT, BFT and BAT GPUs · BradApex accelerators · BradNPU ·
+  BradDrive storage · BradOS · the Kinetic and Torox drivers.</p>
+  <p><strong>No Brad Devices silicon has been fabricated.</strong> No processor of ours exists in
+  metal. There is no foundry, no fabrication partner, and no price.</p>
+  <p>The instruction sets are <span class="tag gen1">DESIGNED</span>. The toolchain is
+  <span class="tag live">SHIPPED</span>. That is the entire difference, and a reviewer should read it
+  here rather than discover it later.</p>
+  <div class="foot">Brad Devices</div><div class="brand">09 / 12</div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="kicker">BradSense</div>
+  <h2>A rendering component that ships, not a promise.</h2>
+  <p>BradSense is our neural rendering path. The first milestone — the spatial core — is
+  <span class="tag live">SHIPPED</span> and measured:
+  <strong>39.43 / 39.44 / 39.57 dB PSNR</strong> across a test corpus, with tests asserting the
+  pixel path itself: determinism, flat-region quietness, edge behaviour, anti-ringing bounds.</p>
+  <p>Further milestones are <span class="tag vision">VISION</span>. We are not going to describe
+  unfinished work as if it were finished, and we are not going to describe a component by the
+  ambition rather than the artifact.</p>
+  <div class="foot">Brad Devices</div><div class="brand">10 / 12</div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="kicker">The team</div>
+  <h2>One builder.</h2>
+  <p>Fifteen, in Kisumu, self-taught. No degree, no co-founder, no institution, no external funding.</p>
+  <p>Every artifact in this deck was produced by one person, in one repository whose entire history
+  is public and whose claims are checked by its own continuous integration.</p>
+  <div class="quote">That is either the weakness of this application or the entire point of it.</div>
+  <p>Thick skin is not a personality trait. It is infrastructure.</p>
+  <div class="foot">Brad Devices</div><div class="brand">11 / 12</div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <div class="kicker">The ask</div>
+  <h2>What funding closes.</h2>
+  <p>Fabrication is the step that turns <span class="tag gen1">DESIGNED</span> into
+  <span class="tag live">SHIPPED</span>, and it is the step money actually closes. No engineering
+  substitutes for a mask set and a wafer.</p>
+  <ul>
+    <li><strong>A fabrication run</strong> — mask set, wafers, packaging, bring-up, first silicon.</li>
+    <li><strong>The first part that boots</strong> — trading a class of assumptions for measurements.</li>
+    <li><strong>The platform completed across every layer</strong> — memory, storage, drivers, runtime.</li>
+    <li><strong>No equity requested.</strong></li>
+  </ul>
+  <p class="lead" style="margin-top:14px;">Software before silicon. Receipts after that.</p>
+  <p><strong>brad.devices.official@gmail.com</strong> ·
+  <span class="mono">brad-devices.vercel.app</span> ·
+  <span class="mono">github.com/Brad-Devices</span> ·
+  <span class="mono">linkedin.com/in/brad-devices</span></p>
+  <div class="foot">Built in Africa, for the World</div><div class="brand">12 / 12</div>
+</section>
+
+</div>
+
+<div class="bar" id="bar"></div>
+<div class="nav">
+  <button id="prev" aria-label="Previous slide">←</button>
+  <span id="count">1/12</span>
+  <button id="next" aria-label="Next slide">→</button>
+  <button class="theme" id="theme" aria-label="Toggle light and dark">◐</button>
+  <button id="print" aria-label="Print or save as PDF">PDF</button>
+</div>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var i = 0;
+  var bar = document.getElementById('bar');
+  var count = document.getElementById('count');
+  var prev = document.getElementById('prev');
+  var next = document.getElementById('next');
+
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function (s, k) { s.classList.toggle('on', k === i); });
+    bar.style.width = ((i + 1) / slides.length * 100) + '%';
+    count.textContent = (i + 1) + '/' + slides.length;
+    prev.disabled = i === 0;
+    next.disabled = i === slides.length - 1;
+    if (history.replaceState) history.replaceState(null, '', '#' + (i + 1));
+    window.scrollTo(0, 0);
+  }
+
+  prev.addEventListener('click', function () { show(i - 1); });
+  next.addEventListener('click', function () { show(i + 1); });
+  document.getElementById('print').addEventListener('click', function () { window.print(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); show(i + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(i - 1); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+
+  var root = document.documentElement;
+  document.getElementById('theme').addEventListener('click', function () {
+    var next = (root.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('brad-theme', next); } catch (e) {}
+  });
+
+  // printed output is meant to be read, so it opens on the first slide and
+  // ignores the stored preference
+  if (window.matchMedia('print').matches) {
+    slides.forEach(function (s) { s.classList.add('on'); });
+    bar.style.width = '100%';
+    return;
+  }
+  var h = parseInt((location.hash || '').replace('#', ''), 10);
+  show(isNaN(h) ? 0 : h - 1);
+})();
+</script>
+</body>
+</html>

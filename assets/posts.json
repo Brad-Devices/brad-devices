@@ -1,0 +1,20 @@
+{
+ "note": "Published posts, as the platform serves them. Fetched by tools/fetch_posts.py; the text is the platform's own preview of the post, never retyped. Engagement counts are deliberately absent -- they move, and a number frozen here would rot into a false claim.",
+ "posts": [
+  {
+   "id": "linkedin-01",
+   "platform": "LinkedIn",
+   "profile": "https://www.linkedin.com/in/brad-devices-869a36440",
+   "label": "The compiler receipt",
+   "published": "2026-11-06",
+   "url": "https://lnkd.in/p/ddG5YM72",
+   "note": "The link in the post text points at the workbench, /now/, through LinkedIn's external-link warning page. That is why the visible URL is a lnkd.in short link rather than the site.",
+   "status": "verified",
+   "text": "I'm building Brad Devices, a computer company in Kisumu, Kenya. The rule is\nsoftware before silicon, receipts after that.\n\nThe receipt I want to show first is a compiler.\n\nIt compiles a C subset to BradISA V2, my own 32-bit instruction set. A small\nemulator then runs the emitted code inside the test suite. Not \"it assembles.\"\nIt executes.\n\nadd(3, 4) returns 7.\nsum(10) returns 45.\nAn eight-argument function returns 36.\nAll 24 tests are green.\n\nThe language is deliberately small: int and void, functions, locals, if/else,\nwhile, globals, arrays, pointers, int-field structs. No optimizer, no C++. It\nexists to prove the ISA can be compiled at all \u2014 the part that was honestly\nmissing.\n\nThe live workbench: https://lnkd.in/dJENjwBV\n\n#BradDevices #Compilers",
+   "permalink": "https://www.linkedin.com/posts/brad-devices-869a36440_braddevices-compilers-activity-7524306932409577472-7c8f",
+   "hashtags": "#braddevices #compilers",
+   "image": "social/posts/linkedin-01",
+   "image_dims": "800x418"
+  }
+ ]
+}

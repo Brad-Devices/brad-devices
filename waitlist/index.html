@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="P2axB0S18_f20T_ykvaIMlD3jegTPd6tuXpIwRgGPQw">
+<title>Follow the Build — Brad Devices</title>
+<meta name="description" content="A subscription to actual releases, not a roadmap. No product is for sale yet and no Brad Devices silicon has been fabricated — so this is not an early-access list. You get one email when something really ships, naming what changed and what it replaced.">
+<meta name="theme-color" content="#0E1117">
+<link rel="canonical" href="https://brad-devices.vercel.app/waitlist">
+<link rel="icon" type="image/png" href="../assets/brad-devices-logos/svg/brad-devices-icon-white.svg">
+<link rel="apple-touch-icon" href="../assets/brad-devices-logos/png/brad-devices-icon-transparent-white-fill-1024px.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brad Devices">
+<meta property="og:title" content="Follow the Build — Brad Devices">
+<meta property="og:description" content="A subscription to actual releases, not a roadmap. No product marketing.">
+<meta property="og:image" content="https://brad-devices.vercel.app/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brad Devices — Follow the Build">
+<meta property="og:url" content="https://brad-devices.vercel.app/waitlist">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Follow the Build — Brad Devices">
+<meta name="twitter:description" content="A subscription to actual releases, not a roadmap. No product marketing.">
+<meta name="twitter:image" content="https://brad-devices.vercel.app/assets/og.png">
+<meta name="twitter:image:alt" content="Brad Devices — Follow the Build">
+<link rel="stylesheet" href="../css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+  /* Forms live here rather than in style.css so the styling ships only with
+     the waitlist, and can be reverted cleanly if the page is withdrawn. */
+  .wl-forms{display:grid;gap:22px;margin-top:26px}
+  .wl-card{background:var(--orbit-surface,#141821);border:1px solid rgba(201,162,39,.22);border-radius:10px;padding:22px}
+  .wl-card h3{margin:0 0 4px}
+  .wl-card .wl-sub{font-size:.88em;color:var(--orbit-text-dim);margin:0 0 16px}
+  .wl-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .wl-field label{font-size:.82em;letter-spacing:.04em;text-transform:uppercase;color:var(--orbit-text-dim)}
+  .wl-field input[type=text],.wl-field input[type=email]{padding:11px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.28);color:inherit;font:inherit;font-size:.95em}
+  .wl-field input:focus{outline:2px solid #C9A227;outline-offset:1px}
+  .wl-seg{display:grid;gap:8px;margin-bottom:16px}
+  .wl-seg label{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid rgba(255,255,255,.12);border-radius:6px;cursor:pointer;font-size:.9em;line-height:1.45}
+  .wl-seg label:hover{border-color:rgba(201,162,39,.5)}
+  .wl-seg input{margin-top:3px;accent-color:#C9A227}
+  .wl-seg b{color:#C9A227;font-weight:600}
+  .wl-seg span{display:block;color:var(--orbit-text-dim);font-size:.94em}
+  .wl-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .wl-note{font-size:.8em;color:var(--orbit-text-dim);margin:12px 0 0}
+  .wl-dead{border:1px dashed rgba(255,255,255,.2);padding:14px;border-radius:6px;font-size:.86em;color:var(--orbit-text-dim)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "#website",
+      "name": "Brad Devices",
+      "url": "https://brad-devices.vercel.app/",
+      "publisher": {
+        "@id": "https://brad-devices.vercel.app/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://brad-devices.vercel.app/#org",
+      "name": "Brad Devices",
+      "alternateName": [
+        "BradDevices",
+        "BradDevicesOfficial",
+        "Brad Devices Inc"
+      ],
+      "legalName": "Brad Devices",
+      "url": "https://brad-devices.vercel.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://brad-devices.vercel.app/assets/brad-devices-logos/svg/brad-devices-icon-white.svg",
+        "width": 512,
+        "height": 512
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://brad-devices.vercel.app/assets/brad-devices-wordmark/svg/brad-devices-wordmark-white.svg",
+        "width": 1420,
+        "height": 200
+      },
+      "foundingDate": "2025-07-05",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Kisumu, Kenya",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kisumu",
+          "addressRegion": "Nyanza",
+          "addressCountry": "KE"
+        }
+      },
+      "areaServed": "Worldwide",
+      "slogan": "Software before silicon. Receipts after that.",
+      "description": "Brad Devices is a computer company founded by Festus Bradley Nyadimo in Kisumu, Kenya. Its BradVector instruction-set architecture and BradDev Kit toolchain are open source, publicly released and run today: the assembler, interpreter, debugger, profiler and reference test suite are installable, versioned and CI-verified. The BradSense-Renderer spatial and temporal cores ship as software and are measured by a gated metrics harness. The BradISA CPU and the Torox GPU family are designed and specified in a 1,737-line public specification but have not been fabricated. The company ships software and designs silicon; it does not yet manufacture hardware.",
+      "knowsAbout": [
+        "computer architecture",
+        "GPU architecture",
+        "ISA design",
+        "RISC ISA design",
+        "operating systems",
+        "unified memory",
+        "unstructured lattices",
+        "assembly language"
+      ],
+      "email": "brad.devices.official@gmail.com",
+      "founder": {
+        "@id": "https://brad-devices.vercel.app/founder/#festus"
+      },
+      "sameAs": [
+        "https://github.com/Brad-Devices",
+        "https://x.com/BradDevices",
+        "https://medium.com/@bradleynyadimo",
+        "https://ke.linkedin.com/in/brad-devices-869a36440"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "brad.devices.official@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": [
+          "en"
+        ]
+      },
+      "hasPart": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "BradDev Kit",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Linux, macOS",
+          "url": "https://github.com/Brad-Devices/BradVector",
+          "downloadUrl": "https://github.com/Brad-Devices/BradVector/releases/tag/v0.1.0",
+          "license": "https://opensource.org/licenses/MIT",
+          "softwareVersion": "0.1.0",
+          "codeRepository": "https://github.com/Brad-Devices/BradVector",
+          "author": {
+            "@id": "https://brad-devices.vercel.app/#org"
+          },
+          "description": "Assembler, interpreter, debugger, cycle-level profiler and a single-binary dev CLI for BradVector. Shipped as tagged release v0.1.0 for linux-x86_64, linux-aarch64 and macos-arm64, each artifact published with a SHA-256 checksum and verified after download on a machine it was not built on."
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "BradVector toolchain",
+          "codeRepository": "https://github.com/Brad-Devices/BradVector",
+          "programmingLanguage": [
+            "C",
+            "Python",
+            "Verilog",
+            "VHDL",
+            "Assembly"
+          ],
+          "license": "https://opensource.org/licenses/MIT",
+          "author": {
+            "@id": "https://brad-devices.vercel.app/#org"
+          },
+          "description": "The open-source BradVector toolchain: the BVRT 32-lane SIMT virtual machine, the bradc assembler, bradgdb, BradTimeline, BVLibs and the reference test suite that gates every release."
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "#webpage",
+      "name": "Follow the Build — Brad Devices",
+      "url": "https://brad-devices.vercel.app/waitlist",
+      "description": "A subscription to actual releases, not a roadmap. No product is for sale yet and no Brad Devices silicon has been fabricated — you get one email when something really ships, naming what changed and what it replaced.",
+      "isPartOf": {
+        "@id": "#website"
+      },
+      "about": {
+        "@id": "https://brad-devices.vercel.app/#org"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="/"><img src="../assets/brad-devices-logos/svg/brad-devices-icon-white.svg" alt="" aria-hidden="true"><span class="nav-wordmark"><img class="wm" src="../assets/brad-devices-wordmark/svg/brad-devices-wordmark-white.svg" alt="BRAD DEVICES" width="142" height="20"></span></a>
+    <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode" title="Toggle light / dark">
+      <svg class="i-sun" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/achievements/">What ships</a>
+      <a href="/products/">The Products</a>
+      <a href="/ecosystem/">The Ecosystem</a>
+      <a href="/founder/">The Founder</a>
+      <a href="/journal/">The Journal</a>
+      <a href="/social/">Social</a>
+      <a href="/now/">Now</a>
+      <a href="/docs/">Spec Docs</a>
+      <a href="/glossary/">The Name Map</a>
+      <a href="/press/">Press Kit</a>
+      <a class="nav-cta" href="/#proof">See it run</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section section-alt" data-tag="FOLLOW THE BUILD · RECEIPTS, NOT A ROADMAP">
+  <div class="container">
+    <span class="eyebrow">No product is for sale. No silicon has been fabricated.</span>
+    <h1>Follow the build.<br>Get the receipts.</h1>
+    <p class="lede">This is not an early-access list, a pre-order queue, or a waitlist for a product you can buy — there isn't one. It's a subscription to actual releases. When the toolchain ships something, or the silicon hits a real milestone, you get one email naming what changed and what it replaced.</p>
+    <p style="margin-top:14px;">No roadmap dates. No <em>coming soon</em>. If there is no receipt, there is no email.</p>
+  </div>
+</section>
+
+<section class="section" id="what" data-tag="01 · WHAT YOU'D ACTUALLY GET">
+  <div class="container">
+    <h2>What you'd actually get</h2>
+    <p style="font-size:.9em;color:var(--orbit-text-dim);">Real examples of the kind of thing that would trigger an email.</p>
+
+    <div class="table-wrap" style="margin-top:18px;"><table>
+      <thead><tr><th>Segment</th><th>An email looks like</th><th>You will never be told</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="mono">software</td>
+          <td>A new <span class="mono">bradgdb</span> command, a fresh BradSense-Render PSNR measurement, a spec-book revision — each with a link you can verify yourself</td>
+          <td>That any silicon is available</td>
+        </tr>
+        <tr>
+          <td class="mono">silicon</td>
+          <td>Tape-out, first boot, a published ISA revision — announced <em>after it happens</em>, with the artifact attached</td>
+          <td>A ship date. A price. A fab partner. Availability.</td>
+        </tr>
+        <tr>
+          <td class="mono">press</td>
+          <td>New public technical releases and spec publications</td>
+          <td>Embargoed material, early numbers, anything under NDA</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="never" data-tag="02 · WHAT YOU WILL NEVER GET">
+  <div class="container">
+    <h2>What you will never get from us</h2>
+    <p class="lede">This part is the point.</p>
+
+    <div class="receipt reveal" style="margin-top:18px;">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 2.6v6c0 4.3-2.8 7.4-7 9.4-4.2-2-7-5.1-7-9.4V5.6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></div>
+      <div>
+        <h4>A request for your money</h4>
+        <p>We cannot take a deposit, a pre-order, or a reservation fee, because there is no product and no foundry. We will not ask for one until that stops being true.</p>
+      </div>
+    </div>
+
+    <div class="receipt reveal" style="margin-top:14px;">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 2.6v6c0 4.3-2.8 7.4-7 9.4-4.2-2-7-5.1-7-9.4V5.6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></div>
+      <div>
+        <h4>A benchmark we haven't measured</h4>
+        <p>Every number we publish comes with the file that produced it. We have turned down comparisons we couldn't reproduce.</p>
+      </div>
+    </div>
+
+    <div class="receipt reveal" style="margin-top:14px;">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 2.6v6c0 4.3-2.8 7.4-7 9.4-4.2-2-7-5.1-7-9.4V5.6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></div>
+      <div>
+        <h4>Never a &ldquo;coming soon&rdquo; email</h4>
+        <p>Every announcement carries the same tag the site does — <span class="badge live">SHIPPED</span> <span class="badge gen1">DESIGNED</span> <span class="badge vision">VISION</span> — so you always know which one you're reading before you click.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="join" data-tag="03 · JOIN">
+  <div class="container">
+    <h2>Join</h2>
+    <p style="font-size:.9em;color:var(--orbit-text-dim);">Pick what you want to hear about. You can change or cancel from any email, one click, no account needed.</p>
+
+    <div class="wl-forms">
+
+      <!-- ===================== ANNOUNCEMENT LIST ===================== -->
+      <!-- NOT LIVE YET. The action URL below is a placeholder.
+           To go live: create the Buttondown account, verify the sending
+           domain, create the three segments (software / silicon / press),
+           then replace ACTION with the embed-subscribe endpoint and the
+           `name` hidden field with the real list slug. No other change. -->
+      <div class="wl-card">
+        <h3>Follow the build</h3>
+        <p class="wl-sub">Release announcements. Confirmed by email, so automated submissions get filtered automatically.</p>
+
+        <div class="wl-dead">&#9888;&#65039; <strong>Not accepting signups yet.</strong> This form goes live once the list service is connected — no address is collected or stored until then.</div>
+
+        <form action="ACTION" method="post" target="popupwindow" style="display:none">
+          <div class="wl-hp"><label>Leave this empty<input type="text" name="_hp" tabindex="-1" autocomplete="off"></label></div>
+          <div class="wl-seg">
+            <label><input type="radio" name="tag" value="software" checked> <span><b>software</b> — the BradVector toolchain, BradSense-Render, BMS. Things that run today.</span></label>
+            <label><input type="radio" name="tag" value="silicon"> <span><b>silicon</b> — BradCore, BradXon, Torox, BradNPU. Milestones only, announced after they happen.</span></label>
+            <label><input type="radio" name="tag" value="press"> <span><b>press</b> — public technical releases and spec publications.</span></label>
+          </div>
+          <div class="wl-field">
+            <label for="wl-email">Email</label>
+            <input type="email" id="wl-email" name="email" required placeholder="you@example.com" autocomplete="email">
+          </div>
+          <input type="hidden" name="name" value="waitlist">
+          <button class="btn btn-gold" type="submit">Subscribe</button>
+        </form>
+
+        <p class="wl-note">We store your address with a third-party list service, never in a public repository. See the <a href="/privacy/">privacy policy</a>.</p>
+      </div>
+
+      <!-- ===================== PRESS INQUIRY ===================== -->
+      <!-- NOT LIVE YET. This one is not a mailing list — an inquiry goes to
+           the press inbox with the fields below so it can be answered before
+           the stated deadline. Wire to a form endpoint that emails
+           brad.devices.official@gmail.com, or replace with a mailto: link
+           carrying the fields in the subject until then. -->
+      <div class="wl-card">
+        <h3>Press inquiry</h3>
+        <p class="wl-sub">For journalists, podcasters and anyone covering the story. This is an inquiry, not a subscription — it goes straight to a person.</p>
+
+        <div class="wl-dead">&#9888;&#65039; <strong>Not accepting inquiries yet.</strong> Until this is wired, email <a href="mailto:brad.devices.official@gmail.com">brad.devices.official@gmail.com</a> directly with your outlet, deadline and angle.</div>
+
+        <form action="ACTION" method="post" style="display:none">
+          <div class="wl-hp"><label>Leave this empty<input type="text" name="_hp" tabindex="-1" autocomplete="off"></label></div>
+          <div class="wl-field">
+            <label for="p-name">Your name</label>
+            <input type="text" id="p-name" name="name" required autocomplete="name">
+          </div>
+          <div class="wl-field">
+            <label for="p-email">Email</label>
+            <input type="email" id="p-email" name="email" required autocomplete="email">
+          </div>
+          <div class="wl-field">
+            <label for="p-outlet">Outlet</label>
+            <input type="text" id="p-outlet" name="outlet" required placeholder="Publication, show, or channel">
+          </div>
+          <div class="wl-field">
+            <label for="p-deadline">Deadline</label>
+            <input type="text" id="p-deadline" name="deadline" placeholder="When do you need this?">
+          </div>
+          <div class="wl-field">
+            <label for="p-angle">Your angle</label>
+            <input type="text" id="p-angle" name="angle" placeholder="What are you working on?">
+          </div>
+          <button class="btn btn-gold" type="submit">Send inquiry</button>
+        </form>
+      </div>
+
+    </div>
+
+    <p class="wl-note" style="margin-top:22px;">Prefer to follow in public? <a href="https://x.com/BradDevices" target="_blank" rel="noopener">@BradDevices on X</a> carries the same receipts.</p>
+
+    <p class="wl-note">The press kit — boilerplate, fast facts, the story, logos and wordmarks — is <a href="/press/">here</a>, and you do not need to sign up for any of it.</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="proof" data-tag="04 · THE PROOF">
+  <div class="container">
+    <h2>Why believe a list like this</h2>
+    <p class="lede">Don't. Check it.</p>
+    <p style="margin-top:14px;">The claims on this page are the same claims the rest of the site makes, and they carry the same receipts. The toolchain runs — <a href="/#proof">watch it assemble, execute and debug in your browser</a>. The specification is real and public: <a href="/docs/"><span data-fact="book_lines|comma">1,737</span> lines, <span data-fact="corpus_docs">120</span> reference documents</a>. Every name in the ecosystem is defined in <a href="/glossary/">the name map</a>.</p>
+
+    <div class="receipt reveal" style="margin-top:20px;">
+      <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 2.6v6c0 4.3-2.8 7.4-7 9.4-4.2-2-7-5.1-7-9.4V5.6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></div>
+      <div>
+        <h4>The count on this list is generated, not typed</h4>
+        <p>Subscriber counts and release facts are pulled from the build at deploy time, so they cannot quietly go stale — the same way every other number on this site is verified by CI before it ships.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="brand-line"><img src="../assets/brad-devices-wordmark/svg/brad-devices-wordmark-white.svg" alt="BRAD DEVICES" width="168" height="40" style="width:168px;height:40px;display:inline-block;vertical-align:middle;"></div>
+    <div>
+      <div class="footer-brand"><span class="k-reg">0x</span><span class="k-com">BRAD&nbsp;DEVICES</span></div>
+      <p class="fline">Honest receipts for a whole computer company. Software before silicon. Receipts after that.</p>
+    </div>
+    <div>
+      <div class="footer-h">EXPLORE</div>
+      <ul class="footer-links">
+        <li><a href="/achievements/">What ships</a></li>
+        <li><a href="/products/">The Products</a></li>
+        <li><a href="/ecosystem/">The Ecosystem</a></li>
+        <li><a href="/founder/">The Founder</a></li>
+        <li><a href="/docs/">Spec Docs</a></li>
+        <li><a href="/glossary/">The Name Map</a></li>
+        <li><a href="/press/">Press Kit</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/#proof">See it run</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+{
+ "profiles": [
+  {
+   "key": "github",
+   "platform": "GitHub",
+   "url": "https://github.com/Brad-Devices",
+   "role": "Receipt",
+   "about": "Every repository, every commit, every CI run. Public, cloneable, and the only place the toolchain actually exists as code.",
+   "facts": [
+    [
+     "Account type",
+     "Organization"
+    ],
+    [
+     "Repositories in this org",
+     "6"
+    ],
+    [
+     "Location",
+     "Kisumu, Kenya"
+    ],
+    [
+     "Created",
+     "2026-10-08"
+    ],
+    [
+     "Links to",
+     "https://brad-devices.vercel.app"
+    ]
+   ],
+   "avatar": "social/github",
+   "handle": "Brad-Devices",
+   "name": "Brad Devices",
+   "bio": "Computer company by Festus Bradley Nyadimo, Kisumu, Kenya. BradVector ISA + open-source toolchain. Software ships and runs; silicon is designed, not fabricated.",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "key": "x",
+   "platform": "X",
+   "url": "https://x.com/BradDevices",
+   "role": "Reach",
+   "about": "One post, one handle. Where announcements go when there is an announcement worth making.",
+   "facts": [
+    [
+     "Avatar",
+     "362x362"
+    ],
+    [
+     "Profile banner",
+     "present"
+    ]
+   ],
+   "avatar": "social/x",
+   "handle": "BradDevices",
+   "name": "Brad Devices (@BradDevices) on X",
+   "bio": "Designing a whole computer company in Kisumu, Kenya. Software before silicon, receipts after that. The toolchain runs; the silicon is designed, not fabbed.",
+   "status": "verified",
+   "note": ""
+  },
+  {
+   "key": "medium",
+   "platform": "Medium",
+   "url": "https://medium.com/@bradleynyadimo",
+   "role": "Record",
+   "about": "Ten essays, archived verbatim in this repository. The full writing history, in order, with nothing edited after the fact.",
+   "facts": [
+    [
+     "Profile image",
+     "672x1536 original, cropped square here"
+    ],
+    [
+     "Essays published",
+     "22"
+    ],
+    [
+     "First",
+     "2025-08-06"
+    ],
+    [
+     "Latest",
+     "2026-10-07"
+    ]
+   ],
+   "avatar": "social/medium",
+   "handle": "@bradleynyadimo",
+   "name": "Festus Bradley Nyadimo",
+   "bio": "",
+   "status": "verified",
+   "note": "",
+   "cached": true
+  },
+  {
+   "key": "linkedin",
+   "platform": "LinkedIn",
+   "url": "https://ke.linkedin.com/in/brad-devices-869a36440",
+   "role": "Identity",
+   "about": "An authwalled profile. Useful for being found; it cannot be checked from outside and is not offered here as evidence.",
+   "facts": [],
+   "avatar": "",
+   "handle": "",
+   "name": "",
+   "bio": "",
+   "status": "unverifiable",
+   "note": "LinkedIn serves an authwall to every logged-out client (HTTP 999 is their block code). There is no way to read this profile from outside, so no avatar and no counts are claimed."
+  }
+ ],
+ "verified": 3,
+ "total": 4
+}

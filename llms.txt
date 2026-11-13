@@ -14,13 +14,25 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 
 ## Provides
 
-- The one book: a 1,689-line unified compendium (52 reference chapters, parts 0–10 + appendices) covering chips, GPUs, memory, OS, compute, software, console and roadmap — every register accounted for, with Gen 1 / Gen 2 / Vision tagging. Ships as a 39-page branded PDF.
+- The one book: a 1,737-line unified compendium (eleven parts, 0–10 plus appendices, 120 documents) covering chips, GPUs, memory, OS, compute, software, console and roadmap — every register accounted for, with Gen 1 / Gen 2 / Vision tagging. Ships as a 41-page branded PDF.
 - BradVector — the GPU/accelerator instruction-set architecture (dual-issue SIMT, 32-thread warps) that every Torox die runs: BradFx (integrated), BradGfx (dedicated), BradApex (datacenter). It is a separate ISA from the CPU-side BradISA; the two meet on the BradFusion fabric and share memory (SPMP), not instructions.
 - The Torox GPU family — BFT100 (integrated), BGT100 (dedicated), BAT100 (datacenter) — one die name, three jobs, one ISA from phone to rack.
-- The unified memory model — SPMP (DRAM pool) + BradRAM (on-die L4 SRAM) + the Infinity Buffer, zero-copy between CPU, GPU and NPU.
-- BradOS and the Kinetic Unified Driver across Mobile, Slate, Compute and Nano.
+- The unified memory model — SPMP (DRAM pool) + BradRAM (JEDEC dies with the L4 SRAM assistant cache on the controller) + the Infinity Buffer, zero-copy between CPU, GPU and NPU.
+- BradSense-Render — the GPU reconstruction engine. Status: M0 SHIPPED as a software reference, M1–M4 queued. The spatial core is real: bilinear + Catmull-Rom bicubic upscale at arbitrary ratio, luma-adaptive sharpen with an anti-ringing clamp and a flat-region gate, fed into `bradsense_reconstruct()` via `bradsense_supply_frame()`, returning -ENODATA rather than inventing pixels. Receipt: `src/tests/test_bradsense_pixels.c` in the ctest suite; 2× super-resolution PSNR 39.43 dB (bilinear) / 39.44 dB (bicubic) / 39.57 dB (bicubic + sharpen), byte-deterministic, per-pixel anti-ringing bound verified. Queued: M1 temporal core (history buffer, motion-vector reprojection, responsive masks), M2 the metrics harness that makes it repeatable, M3 expressing the temporal core as BradVector kernels, M4 the trained per-object semantic experts. Honest framing: "we use AI to upscale" is the floor — FSR 4, DLSS 4 and XeSS 2 are all ML; the claim is the object-aware semantic pipeline. The algorithm is FSR-3-derived but reimplemented from published behaviour (AMD's FidelityFX SDK is MIT), never cargo-copied and never branded FSR. The product stays Design/Sil in the registry; only the software reference ships.
+- BradOS and the Kinetic and Torox drivers across Mobile, Slate, Compute and Nano.
+- The social profiles — every public account with the avatar each platform actually serves:
+  3 of 4 profiles readable from outside and shown verbatim, the fourth (LinkedIn) marked unverifiable
+  rather than illustrated, because it serves a login wall: https://brad-devices.vercel.app/social/
+- The journal — 22 founder essays archived verbatim in order, 2025 to 2026, each
+  with its date, read time, word count and cover, plus the posts published since as the platform's own
+  preview (text and image fetched, never retyped, no engagement counts):
+  https://brad-devices.vercel.app/journal/
+- Selected writing by the founder — 22 essays on Medium. The most recent is
+  "The Receipts, One Year Later" (2026-10-07): an account of the build with every figure linked to its
+  receipt — https://medium.com/@bradleynyadimo/the-receipts-one-year-later-7fb289051805
 - The shipped reference toolchain — assembler, interpreter, debugger, profiler, one-binary dev CLI, host API, and browser wasm build.
-- BradDevKit, TIFA AI toolchain, and BMS cloud services — all stdlib-only, all runnable today.
+  Released as v0.1.0 (MIT) with prebuilt binaries for linux-x86_64, linux-aarch64 and macos-arm64, each with a sha256: https://github.com/Brad-Devices/BradVector/releases/tag/v0.1.0 The release job refuses to publish unless ctest is green (24 tests in the tree today — the live count is site/assets/facts.json).
+- BradDev Kit, TIFA AI toolchain, and BMS cloud services — all stdlib-only, all runnable today.
 - ANF — BradXon's Adaptive Neural Fabric: compute partitions (MIG-class), a reconfigurable dataflow NPU (CGRA-class), and a fabric governor that steers clock/power/bandwidth. It adapts budget, not silicon — DESIGNED Gen 1; the literal unit-morph stays VISION.
 
 ## The reference toolchain (SHIPPED, runs today)
@@ -31,31 +43,33 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - BradTimeline — cycle-level trace engine exporting full instruction traces to CSV.
 - braddev — the one-binary dev CLI (cvt / run / dbg / gpu info / gpu top / timeline / test) built on the shipped stack plus SPMP / EROE / Fabric drivers. All self-checks pass; saxpy and fib run end-to-end.
 - bradlib.h — the stable host-facing BradVector Platform API (compile → pack → session → launch → run → inspect → breakpoints), exposed 1:1 to the browser via site/js/bradvector.js.
-- BVLibs — the reference math + neural libraries (BVML: saxpy, dot; BVN: relu, affine, softmax, gelu, silu). Public boundary: API headers, .bvbs kernels, tests, and an independent host reference — repo Brad-Devices/BVLibs; run live in the site's wasm via BradVector.lib.*.
+- BVLibs — the reference math + neural libraries (BVML: saxpy, dot, gemm; BVN: relu, affine, softmax, gelu, silu). Public boundary: API headers, .bvbs kernels, tests, and an independent host reference — repo Brad-Devices/BVLibs; run live in the site's wasm via BradVector.lib.*.
 - TIFA SDK — Python-first AI toolchain (import tifa): one-line optimize(), AutoNeuroStream partition (BNV / BVX / BFX), MoE expert spooler, exact FP8/FP4/INT4 digit formats.
 - BMS — Brad Mobile Services: REST spec + stdlib-only reference server — BradID auth, BradMail, BradHub, BradPay ledger, BradCloud, BradNotify, BradGeo.
 
 ## The stack — one machine, six parts
 
 - Silicon: BradChip fuses CPU + GPU + NPU + the custom BradFusion fabric on one package (tiers Lite P2+E4 → Max P8+E8; Torox GPU; up to 1024-core NPU). BradXon is the flagship whose Adaptive Neural Fabric — compute partitions, a reconfigurable dataflow NPU, a fabric governor — steers power, clock, and fabric budget to the workload. One fabric crosses every die — no PCIe-style borders.
-- GPU: every Torox die runs the same BradVector engine — write a kernel once, it runs on integrated, discrete and datacenter. BradRays ray tracking and Neuro-Stream AI cores sit on-die. Die registry: BGT / BFT / BAT, generation in the number, tier in the suffix (G1 today).
-- Memory: BradRAM + SPMP = one unified pool; the GPU is not a guest in a PCIe lane. BradRAM on-die L4 SRAM stack, SPMP gigabytes of unified LPDDR, Infinity Buffer GPU SRAM, BradSec-RAM encrypted-at-rest regions.
-- Systems software: BradOS across Mobile/Slate/Compute/Nano editions (7-year OS updates, 13-year hardware support); the Kinetic Unified Driver targets Vulkan 1.4, DirectX 12 Ultimate, Metal 3, SYCL 2020 — one driver stack, no driver zoo.
+- GPU: every Torox die runs the same BradVector engine — write a kernel once, it runs on integrated, discrete and datacenter. BradRT ray-tracing cores and Neuro-Stream AI cores sit on-die. Die registry: BGT = BradGfx (discrete), BFT = BradFx (integrated), BAT = BradApex (datacenter); generation in the number, tier in the suffix (G1 today).
+- Memory: BradRAM + SPMP = one unified pool; the GPU is not a guest in a PCIe lane. BradRAM is standard JEDEC LPDDR5X dies plus a Brad-designed controller carrying the L4 SRAM assistant cache, DDS predictive prefetch and inline encryption — no custom DRAM die. SPMP gigabytes of unified LPDDR, Infinity Buffer GPU SRAM, BradSec-RAM encrypted-at-rest regions.
+- Systems software: BradOS across Mobile/Slate/Compute/Nano editions (7-year OS updates, 13-year hardware support); the Kinetic and Torox drivers target Vulkan 1.4, DirectX 12 Ultimate, Metal 3, SYCL 2020 — one driver layer, no driver zoo. Both are DESIGNED, not shipped.
+- Graphics software: BradSense-Render (above) is the reconstruction engine; Neuro-Stream units are the on-die NPU hardware beside it.
 - Products: BradMatrix laptops (Essential → Ultra), BradOS Compute workstations/servers, and the BradAxis console (Torox GPU in a box, Nexus controller) — every product an instance of the same architecture.
 - The toolchain above ties all six parts together and ships first.
+- The live workbench: https://brad-devices.vercel.app/now/ — what is being built right now, derived from the repository by the build itself.
 
 ## Specifications (PDF)
 
-- [The complete Brad Devices spec (39 pages)](https://brad-devices.vercel.app/assets/BRAD_DEVICES_COMPLETE_SPEC.pdf): the definitive reference — all registers, encodings and systems in one book.
-- [BradGFX architecture (11 pages)](https://brad-devices.vercel.app/assets/specs/bradgfx_arch.pdf): the GPU architecture — the six-stage BradVector pipeline and render path drawn as stage diagrams.
-- [BradISA (11 pages)](https://brad-devices.vercel.app/assets/specs/bradisa_spec.pdf): the ISA — real bit-field figures for RRR / RI / BR / JMP.
+- [The complete Brad Devices spec (41 pages)](https://brad-devices.vercel.app/assets/BRAD_DEVICES_COMPLETE_SPEC.pdf): the definitive reference — all registers, encodings and systems in one book.
+- [BradGfx architecture (11 pages)](https://brad-devices.vercel.app/assets/specs/bradgfx_arch.pdf): the GPU architecture — the six-stage BradVector pipeline and render path drawn as stage diagrams.
+- [BradISA (15 pages)](https://brad-devices.vercel.app/assets/specs/bradisa_spec.pdf): the ISA — real bit-field figures for RRR / RI / BR / JMP.
 - [BradISA v2 vector extension (16 pages)](https://brad-devices.vercel.app/assets/specs/bradisa_v2_ext.pdf): 16-bit compressed layout + 256-bit VSET lanes.
-- [BradXON platform (17 pages)](https://brad-devices.vercel.app/assets/specs/bradxon_platform.pdf): Gen 1 platform — address-layout bands, MMIO, the ANF fabric governor and compute partitions.
+- [BradXon platform (17 pages)](https://brad-devices.vercel.app/assets/specs/bradxon_platform.pdf): Gen 1 platform — address-layout bands, MMIO, the ANF fabric governor and compute partitions.
 - [Brad Devices product portfolio (16 pages)](https://brad-devices.vercel.app/assets/specs/product_portfolio.pdf): the full product line — brand-hierarchy tree + software portfolio.
 - [Competitive analysis (10 pages)](https://brad-devices.vercel.app/assets/specs/competitive_analysis.pdf): whitespace vs the giants — the software-moat line is shipped.
 - [BradVector Core vs Intel (8 pages)](https://brad-devices.vercel.app/assets/specs/bradcore_vs_intel.pdf): core-by-core vs the incumbent — benchmark tables, honest rows.
 
-## Key documents in the 52-chapter design tree
+## Key documents in the 120-document design tree
 
 - BradVector ISA — the instruction set every Torox GPU shares (public: github.com/Brad-Devices/BradVector).
 - Torox GPU architecture — microarchitecture, die naming, the G1 registry.
@@ -72,13 +86,14 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - [Products](https://brad-devices.vercel.app/products/): every device tagged SHIPPED / DESIGNED / VISION.
 - [Ecosystem](https://brad-devices.vercel.app/ecosystem/): silicon, GPU, memory, OS, products and toolchain as one machine in six parts.
 - [Founder](https://brad-devices.vercel.app/founder/): Festus Bradley Nyadimo and the working-toolchain argument.
-- [Spec docs](https://brad-devices.vercel.app/docs/): the book, the branded spec set, and the 52-chapter tree.
+- [Spec docs](https://brad-devices.vercel.app/docs/): the book, the branded spec set, and the 120-document tree.
 - [Achievements](https://brad-devices.vercel.app/achievements/): what actually ships, unattended in CI.
 - [Glossary](https://brad-devices.vercel.app/glossary/): the name map — one receipt line per name, including the micro-words (P/E core, NPU, ISA, SRAM, DRAM, GPU, SoC, fabric, die, stack).
 
 ## How to verify
 
-- Read the book: the 39-page PDF or the 1,689-line compendium everything points to.
-- Watch it run: the toolchain executes in CI — braddev test at 11/11 green, saxpy across 32 lanes, round-trip bytecode tests, and the in-browser wasm build of the platform API.
+- Read the book: the 41-page PDF or the 1,737-line compendium everything points to.
+- Watch it run: the toolchain executes in CI on every push — ctest 24/24 green, the braddev self-test with 0 traps on saxpy and fib, round-trip bytecode tests, and the in-browser wasm build of the platform API.
 - Contact: brad.devices.official@gmail.com
 - GitHub: https://github.com/Brad-Devices
+- X: https://x.com/BradDevices

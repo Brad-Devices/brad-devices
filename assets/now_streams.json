@@ -1,0 +1,139 @@
+{
+  "note": "The curated input to the /now/ workbench. The ONLY hand-authored data on the page. Rules, enforced by tools/build_now.py: every state is one of SHIPPED / IN PROGRESS / DESIGNED / QUEUED; every stream names at least one repository path that exists (a stream cannot outlive its artefact); anything IN PROGRESS or DESIGNED untouched for more than 14 days is stamped STALLED by the build, by data. Moat-adjacent work with no public artefact does not appear here, ever.",
+  "streams": [
+    {
+      "id": "falcon-decoder",
+      "state": "SHIPPED",
+      "title": "BradISA V2 in RTL — the Falcon decoder",
+      "what": "All 64 opcode slots decoded in RTL: 50 assigned across seven formats, 14 reserved and raising undef. The coverage testbench feeds every slot and is green. Simulation-verified; no FPGA bitstream yet.",
+      "paths": [
+        "src/rtl/verilog/bradisa_defines.v",
+        "src/rtl/verilog/brad_decode.v",
+        "src/rtl/verilog/tb_decode_coverage.v"
+      ],
+      "link": "https://github.com/Brad-Devices",
+      "link_label": "the RTL, on GitHub"
+    },
+    {
+      "id": "bradisa-execute",
+      "state": "SHIPPED",
+      "title": "BradISA V2 execute stage — the Falcon pipeline",
+      "what": "ALU, immediates, loads and stores, branches, CALL/RET/JALR, and the forwarding that removes stalls. 60 execution checks on hand-encoded V2 programs, zero errors; undefined opcodes and divide-by-zero raise the fault line. Verilog only — the VHDL tree is still V1.",
+      "paths": [
+        "src/rtl/verilog/brad_execute.v",
+        "src/rtl/verilog/brad_core.v",
+        "src/rtl/verilog/brad_alu.v",
+        "src/rtl/verilog/tb_brad_core.v"
+      ],
+      "link": "https://github.com/Brad-Devices",
+      "link_label": "the RTL, on GitHub"
+    },
+    {
+      "id": "bradasm-v2",
+      "state": "SHIPPED",
+      "title": "BradISA V2 assembler — table-driven, ABI-aligned",
+      "what": "The V1 assembler is retired. The V2 one is two-pass and table-driven: 50 mnemonics, seven formats, ABI register names, labels, data directives. A new ISA drift gate compares the Verilog package, the C header and the assembler table, so the RTL and the toolchain cannot silently disagree. RET is 0xB8000000 and the link register is r15, matching the published ABI.",
+      "paths": [
+        "src/asm/bradasm.c",
+        "tools/check_isa_drift.py",
+        "src/rtl/verilog/bradisa_defines.v"
+      ],
+      "link": "https://github.com/Brad-Devices",
+      "link_label": "the assembler, on GitHub"
+    },
+    {
+      "id": "bradc-mini",
+      "state": "SHIPPED",
+      "title": "bradc-mini — the C-subset compiler that runs its own output",
+      "what": "A TCC-class compiler for BradISA V2: int/void, functions with up to 8 arguments, locals, if/else, while, globals, arrays, pointers and int-field structs. A new in-process V2 emulator executes the emitted code in ctest, so add(3,4)=7, sum(10)=45 and the combined aggregate test are checked end-to-end, not just assembled.",
+      "paths": [
+        "src/bradc-mini/bradcmini.c",
+        "src/emu/brad_core_v2_emu.c",
+        "src/tests/test_bradcmini.c"
+      ],
+      "link": "https://github.com/Brad-Devices",
+      "link_label": "the compiler, on GitHub"
+    },
+    {
+      "id": "decode-coverage",
+      "state": "SHIPPED",
+      "title": "The 64-slot decode-coverage gate",
+      "what": "A testbench that feeds every one of the 64 opcode values and fails unless the 50 assigned slots decode with the right format and the 14 reserved slots trap. Wired into CI through tools/check_rtl.py, alongside the execution testbench.",
+      "paths": [
+        "src/rtl/verilog/tb_decode_coverage.v",
+        "tools/check_rtl.py"
+      ],
+      "link": "https://github.com/Brad-Devices",
+      "link_label": "the gate, on GitHub"
+    },
+    {
+      "id": "bv-slice",
+      "state": "SHIPPED",
+      "title": "BradVector compiler — the vertical slice",
+      "what": "PTX-text in, .bvbc out, nine kernels run lane-by-lane on BVRT, the full ctest suite green. Rung 1 lowers 64-bit loads and stores to two 32-bit accesses with a run-time 8-byte alignment check. Cubin, 64-bit ALU, atomics, doubles and predicated 64-bit accesses remain honestly unsupported.",
+      "paths": [
+        "src/brad-cvt/ptx.h",
+        "src/brad-cvt/bradcvt.c",
+        "src/brad-cvt/ptx_parse.c",
+        "src/brad-cvt/ptx_codegen.c",
+        "src/tests/test_bradcvt.c",
+        "Brad Software/OS/BRADCVT_PTX_SUBSET.md"
+      ],
+      "link": "https://github.com/Brad-Devices",
+      "link_label": "the brad-cvt source, on GitHub"
+    },
+    {
+      "id": "bradkernel-design",
+      "state": "DESIGNED",
+      "title": "BradKernel — ABI, trap entry and the boot seed",
+      "what": "The second reconciliation pass wrote the V2 scalar ABI, the trap-entry sequence, the boot/schedule/switch seed, the CVT next-rung plan and the blocked register. The seed is designed and simulated on V1 — boot, a software-injected trap, syscall routing, context switch and a round-robin scheduler — while preemption, ECALL and the timer remain VISION because V2 assigns no ECALL opcode and the RTL has no exception logic. C10 (threads per Torox cluster) and R10 (Torox fault path) stay blocked pending the Architect.",
+      "paths": [
+        "Brad Software/OS/BRADKERNEL_ABI.md",
+        "Brad Software/OS/BRADKERNEL_TRAP_ENTRY.md",
+        "Brad Software/OS/BRADKERNEL_SEED.md",
+        "Brad Software/OS/BRADKERNEL_BLOCKED.md",
+        "Brad Software/OS/BRADCVT_NEXT_RUNGS.md"
+      ],
+      "link": "https://github.com/Brad-Devices",
+      "link_label": "the kernel docs, on GitHub"
+    },
+    {
+      "id": "bradsense-core",
+      "state": "SHIPPED",
+      "title": "BradSense-Renderer — spatial (M0), temporal (M1) and metrics (M2)",
+      "what": "Three milestones ship: the spatial core, the temporal core, and the metrics harness with golden diffs that keep the numbers honest. All public and receipted. The real-resolution corpus and M3–M4 stay open; what comes next in the pipeline stays moat.",
+      "paths": [
+        "Brad Silicon/GPU/BRADSENSE_RENDERER_PLAN.md",
+        "src/drivers/bradsense.c",
+        "src/tests/test_bradsense_metrics.c",
+        "src/tests/golden/bradsense_metrics.json"
+      ],
+      "link": "/achievements/",
+      "link_label": "what ships today"
+    },
+    {
+      "id": "corporate",
+      "state": "SHIPPED",
+      "title": "The corporate folder, assessed and updated",
+      "what": "A deep audit of every governance document: the IP registry corrected to the shipped ISA spec, an index and audit record added. Two decisions were carried to the founder — the equity plan's calendar years (F7) and the five unbounded questions in EXCELLENCE_STRATEGY (F8) — and both are still pending.",
+      "paths": [
+        "COMPANY/CORPORATE_AUDIT.md",
+        "COMPANY/IP_REGISTRY.md"
+      ],
+      "link": "https://github.com/Brad-Devices",
+      "link_label": "the governance docs, on GitHub"
+    },
+    {
+      "id": "site",
+      "state": "SHIPPED",
+      "title": "This site — one motion stack",
+      "what": "One motion engine where there were two: GSAP + ScrollTrigger + Lenis replaced the retired Motion One — vendored, hash-gated, reduced-motion-safe, no-JS-readable. Every reading page loads it; the deck is deliberately self-contained.",
+      "paths": [
+        "site/js/app.js",
+        "site/vendor/MANIFEST.md"
+      ],
+      "link": "/",
+      "link_label": "start from the front page"
+    }
+  ]
+}
