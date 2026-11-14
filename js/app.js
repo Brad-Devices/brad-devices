@@ -4,6 +4,29 @@
    (site/vendor/MANIFEST.md). Reduced-motion and no-JS readers get the
    full page, always. */
 
+/* The ASCII mark of Brad Devices, printed at the top of a terminal.
+ *
+ * The art lives once, in brand/ascii/, and reaches the browser through
+ * site/js/brad-ascii.js — published by tools/gen_ascii.py, the same way the
+ * CLI headers get it. One mark, two consumers, no hand-copied art.
+ *
+ * It is aria-hidden on purpose: a screen reader should hear the sentence the
+ * terminal is about to run, not five rows of block characters. */
+function bradAsciiBanner(pre, name) {
+  if (!pre || !window.BradAscii) return;
+  var lines = window.BradAscii.lines(name || "mini");
+  if (!lines.length) return;
+  var art = document.createElement("div");
+  art.className = "term-banner";
+  art.setAttribute("aria-hidden", "true");
+  for (var i = 0; i < lines.length; i++) {
+    var row = document.createElement("div");
+    row.textContent = lines[i];
+    art.appendChild(row);
+  }
+  pre.appendChild(art);
+}
+
 (function () {
   "use strict";
 
@@ -162,6 +185,7 @@
     var pre = document.createElement("div");
     pre.className = "term-body";
     host.appendChild(pre);
+    bradAsciiBanner(pre, "mini");
 
     var i = 0;
     function type(text, onDone) {
@@ -201,8 +225,7 @@
         done.innerHTML = "&nbsp;◼ end of recorded session — real output from the reference toolchain in this repo";
         pre.appendChild(done);
         return;
-      }
-      var step = data[i++];
+      }      var step = data[i++];
       var cur = cursorLine();
       var cmd = "$ " + step.cmd;
       type(cmd, function () {
@@ -316,7 +339,7 @@
         { cmd: "bradgdb saxpy.bvbc -b 4",
           out: function () { return window.BradWasm.call("brad_wasm_gdb").out; } },
         { cmd: "ctest --test-dir build",
-          out: "100% tests passed, 11 tests out of 11\nBradVector platform · green" }
+          out: "100% tests passed, 24 tests out of 24\nBradVector platform · green" }
       ];
       var i = 0;
       var finalLine =
@@ -331,7 +354,10 @@
       }
       next();
     }
-    window.BradWasm.load().then(run, function () {
+    window.BradWasm.load().then(function () {
+      bradAsciiBanner(pre, "mini");
+      run();
+    }, function () {
       if (window.BradTerminal) window.BradTerminal(host, fallback, { speed: 1 });
       else outMain("live loop unavailable — showing recorded session", "var(--orbit-muted)", null);
     });

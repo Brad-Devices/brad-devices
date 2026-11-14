@@ -232,6 +232,10 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 800; letter-spacing: -.
 .term-body .prompt { color: var(--brad-gold); }
 .term-body .ok { color: var(--live); }
 .term-body .dim { color: var(--orbit-faint); }
+/* The ASCII mark at the top of a terminal. Tight leading, because half-block
+   glyphs only read as a letterform when the rows sit close together; and dim
+   gold, because the mark introduces the terminal and the output is the point. */
+.term-body .term-banner { color: var(--brad-gold-dim); line-height: 1.05; margin-bottom: 14px; }
 .term-cursor { display: inline-block; width: 8px; height: 15px; background: var(--brad-gold); vertical-align: -2px; animation: blink 1s step-end infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
