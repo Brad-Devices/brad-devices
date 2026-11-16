@@ -64,7 +64,7 @@ Nothing is dressed up. No invented benchmarks, no pretend silicon.
 
 ## The proof
 
-- **The book** — a 1,737-line unified compendium: 131 reference documents, every register accounted for. Ships as a [41-page branded PDF](https://brad-devices.vercel.app/assets/BRAD_DEVICES_COMPLETE_SPEC.pdf).
+- **The book** — a 1,737-line unified compendium: 134 reference documents, every register accounted for. Ships as a [41-page branded PDF](https://brad-devices.vercel.app/assets/BRAD_DEVICES_COMPLETE_SPEC.pdf).
 - **The specs** — [BradISA](https://brad-devices.vercel.app/assets/specs/bradisa_spec.pdf), [BradISA v2 (VSET vector)](https://brad-devices.vercel.app/assets/specs/bradisa_v2_ext.pdf), [BradGFX](https://brad-devices.vercel.app/assets/specs/bradgfx_arch.pdf), [BradXon platform](https://brad-devices.vercel.app/assets/specs/bradxon_platform.pdf), [product portfolio](https://brad-devices.vercel.app/assets/specs/product_portfolio.pdf), and more, all linked from the site.
 - **It runs** — the toolchain executes unattended in CI: `braddev test` 37 checks green, saxpy across all 32 lanes, round-trip bytecode tests, and an in-browser wasm build of the platform API.
 
@@ -72,7 +72,7 @@ Nothing is dressed up. No invented benchmarks, no pretend silicon.
 
 ```
 index.html       home — the pitch and the receipts
-docs/            the specs, the 131-document tree
+docs/            the specs, the 134-document tree
 products/        every device, tagged SHIPPED / DESIGNED / VISION
 ecosystem/       the six-part machine
 founder/         the working-toolchain argument
