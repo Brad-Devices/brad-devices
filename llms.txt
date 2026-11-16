@@ -14,7 +14,7 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 
 ## Provides
 
-- The one book: a 1,737-line unified compendium (eleven parts, 0–10 plus appendices, 121 documents) covering chips, GPUs, memory, OS, compute, software, console and roadmap — every register accounted for, with Gen 1 / Gen 2 / Vision tagging. Ships as a 41-page branded PDF.
+- The one book: a 1,737-line unified compendium (eleven parts, 0–10 plus appendices, 131 documents) covering chips, GPUs, memory, OS, compute, software, console and roadmap — every register accounted for, with Gen 1 / Gen 2 / Vision tagging. Ships as a 41-page branded PDF.
 - BradVector — the GPU/accelerator instruction-set architecture (dual-issue SIMT, 32-thread warps) that every Torox die runs: BradFx (integrated), BradGfx (dedicated), BradApex (datacenter). It is a separate ISA from the CPU-side BradISA; the two meet on the BradFusion fabric and share memory (SPMP), not instructions.
 - The Torox GPU family — BFT100 (integrated), BGT100 (dedicated), BAT100 (datacenter) — one die name, three jobs, one ISA from phone to rack.
 - The unified memory model — SPMP (DRAM pool) + BradRAM (JEDEC dies with the L4 SRAM assistant cache on the controller) + the Infinity Buffer, zero-copy between CPU, GPU and NPU.
@@ -69,7 +69,7 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - [Competitive analysis (10 pages)](https://brad-devices.vercel.app/assets/specs/competitive_analysis.pdf): whitespace vs the giants — the software-moat line is shipped.
 - [BradVector Core vs Intel (8 pages)](https://brad-devices.vercel.app/assets/specs/bradcore_vs_intel.pdf): core-by-core vs the incumbent — benchmark tables, honest rows.
 
-## Key documents in the 121-document design tree
+## Key documents in the 131-document design tree
 
 - BradVector ISA — the instruction set every Torox GPU shares (public: github.com/Brad-Devices/BradVector).
 - Torox GPU architecture — microarchitecture, die naming, the G1 registry.
@@ -86,7 +86,7 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - [Products](https://brad-devices.vercel.app/products/): every device tagged SHIPPED / DESIGNED / VISION.
 - [Ecosystem](https://brad-devices.vercel.app/ecosystem/): silicon, GPU, memory, OS, products and toolchain as one machine in six parts.
 - [Founder](https://brad-devices.vercel.app/founder/): Festus Bradley Nyadimo and the working-toolchain argument.
-- [Spec docs](https://brad-devices.vercel.app/docs/): the book, the branded spec set, and the 121-document tree.
+- [Spec docs](https://brad-devices.vercel.app/docs/): the book, the branded spec set, and the 131-document tree.
 - [Achievements](https://brad-devices.vercel.app/achievements/): what actually ships, unattended in CI.
 - [Glossary](https://brad-devices.vercel.app/glossary/): the name map — one receipt line per name, including the micro-words (P/E core, NPU, ISA, SRAM, DRAM, GPU, SoC, fabric, die, stack).
 
