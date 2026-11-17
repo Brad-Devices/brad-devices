@@ -234,8 +234,15 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 800; letter-spacing: -.
 .term-body .dim { color: var(--orbit-faint); }
 /* The ASCII mark at the top of a terminal. Tight leading, because half-block
    glyphs only read as a letterform when the rows sit close together; and dim
-   gold, because the mark introduces the terminal and the output is the point. */
+   gold, because the mark introduces the terminal and the output is the point.
+   The site prints the block mark (full blocks, one glyph, no half-height
+   anchoring) because it is the one variant every monospace font has shipped
+   since forever -- a half-block anchor is a font metric, and the phone does
+   not hold this site's brand hostage to it. */
 .term-body .term-banner { color: var(--brad-gold-dim); line-height: 1.05; margin-bottom: 14px; }
+@media (max-width: 560px) {
+  .term-body .term-banner { font-size: 7.5px; line-height: 1.1; }
+}
 .term-cursor { display: inline-block; width: 8px; height: 15px; background: var(--brad-gold); vertical-align: -2px; animation: blink 1s step-end infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
@@ -420,30 +427,35 @@ blockquote.brad-quote cite { display: block; margin-top: 18px; font-style: norma
 /* Theme init runs inline in <head>; CSS honors the attribute.
    Light scheme tokens — Orbit Black flips to a paper-cold palette,
    gold darkens to keep contrast on light surfaces. */
+/* Light Matter -- the Mist family. Platinum Mist (#D9DEE5, the carousel anchor) is the
+   canvas; Mist surfaces lift toward white on the same ladder logic as Dark Matter's
+   Matter ramp; gold steps DOWN the ramp to gold.300 on Mist (gold.400 measures 2.89:1
+   on this canvas, under the 3.0 non-text floor; gold.300 measures 4.98:1). Every value
+   here is measured, not picked -- see src/bradium/tokens/themes/light-matter.json. */
 :root[data-theme="light"] {
   color-scheme: light;
-  --orbit-black: #F5F7FA;
-  --orbit-black-2: #FFFFFF;
-  --orbit-black-3: #E9EDF3;
-  --orbit-border: #D6DEE9;
-  --orbit-border-hi: #B3BFD0;
-  --orbit-text: #151B28;
-  --orbit-muted: #46566C;
-  --orbit-faint: #7C8CA1;
-  --brad-gold: #9C7A12;
-  --brad-gold-light: #B58C1A;
-  --brad-gold-dim: #7A5E10;
-  --brad-link: #7A5E10;        /* 5.7:1 page, 5.2:1 chip */
-  --brad-link-border: #6F8099; /* 3.8:1 */
-  --brad-link-hover: #6E560E; /* 6.5:1 -- darker, not lighter */
-  --gen1: #9C7A12;
-  --gen2: #46566C;
-  --vision: #7C8CA1;
-  --ref: #9C7A12;
-  --live: #9C7A12;
+  --orbit-black: #D9DEE5;      /* background.primary -- Platinum Mist (D-02) */
+  --orbit-black-2: #E6EAF0;    /* surface.primary -- Mist Surface */
+  --orbit-black-3: #EDF0F4;    /* surface.elevated -- Mist Elevated */
+  --orbit-border: #C3CBD5;     /* border.subtle -- Mist Hairline */
+  --orbit-border-hi: #5A6C7E;  /* border.strong -- Mist Strong (4.0:1 canvas / 4.48:1 surface) */
+  --orbit-text: #131B28;       /* text.primary -- Mist Ink (12.78:1 canvas / 14.31:1 surface) */
+  --orbit-muted: #3A4552;      /* text.secondary -- Mist Muted Ink (7.21:1 canvas / 8.08:1 surface) */
+  --orbit-faint: #5E6875;      /* text.tertiary -- Mist Tertiary Ink (4.18:1 canvas / 4.68:1 surface) */
+  --brad-gold: #6C5A1F;        /* accent.brand -- gold.300 (4.98:1 canvas / 5.57:1 surface) */
+  --brad-gold-light: #9A7E23;  /* gold.400 -- accent fill on light surfaces only (ink-on 5.09:1) */
+  --brad-gold-dim: #3D351B;    /* gold.200 -- gold ramp, deep */
+  --brad-link: #6C5A1F;        /* gold.300 -- link text ink */
+  --brad-link-border: #A9B3BF; /* Mist default border */
+  --brad-link-hover: #3D351B;  /* gold.200 -- darker, on the ramp */
+  --gen1: #6C5A1F;
+  --gen2: #3A4552;             /* Mist muted ink */
+  --vision: #5E6875;           /* Mist tertiary ink */
+  --ref: #6C5A1F;
+  --live: #6C5A1F;
 }
 
-:root[data-theme="light"] .nav { background: rgba(255, 255, 255, .97); }
+:root[data-theme="light"] .nav { background: rgba(233, 236, 240, .96); }
 :root[data-theme="light"] .hero::before { opacity: .45; }
 :root[data-theme="light"] .badge.live { color: #fff; background: var(--live); }
 :root[data-theme="light"] .badge.ship { color: #fff; background: var(--brad-gold); }
@@ -454,9 +466,12 @@ blockquote.brad-quote cite { display: block; margin-top: 18px; font-style: norma
   --orbit-border: #1E2530;
   --orbit-muted: #9AA7BC;
   --orbit-faint: #5F6C81;
+  /* The terminal is always dark, so the brand-dim-gold for the banner must not
+     inherit the light theme's deeper tint. */
+  --brad-gold-dim: #8A7320;
 }
-:root[data-theme="light"] .term-frame.top .trule { border-top-color: rgba(156, 122, 18, .55); }
-:root[data-theme="light"] .term-frame.bottom .trule { border-bottom-color: rgba(156, 122, 18, .55); }
+:root[data-theme="light"] .term-frame.top .trule { border-top-color: rgba(108, 90, 31, .55); }
+:root[data-theme="light"] .term-frame.bottom .trule { border-bottom-color: rgba(108, 90, 31, .55); }
 
 /* ---------- Theme toggle ---------- */
 .theme-toggle {
@@ -495,14 +510,14 @@ body::before {
 :root[data-theme="light"] .receipt,
 :root[data-theme="light"] .pillar,
 :root[data-theme="light"] .honesty,
-:root[data-theme="light"] .founder-card { background: rgba(255, 255, 255, .90); }
+:root[data-theme="light"] .founder-card { background: rgba(230, 234, 240, .90); }
 
 /* Section banding (subtle fill only — dividers now come from the divider system) */
 .section-alt {
   position: relative;
   background: rgba(201, 162, 39, .030);
 }
-:root[data-theme="light"] .section-alt { background: rgba(14, 17, 23, .025); }
+:root[data-theme="light"] .section-alt { background: rgba(19, 27, 40, .032); }
 
 /* ============================================================
    SECTION DIVIDER SYSTEM
@@ -538,11 +553,11 @@ body::before {
 }
 :root[data-theme="light"] .cta-band::before {
   background:
-    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(201, 162, 39, .12), transparent 65%),
+    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(108, 90, 31, .14), transparent 65%),
     linear-gradient(90deg, rgba(84, 99, 125, .16), rgba(84, 99, 125, .34) 50%, rgba(84, 99, 125, .16)) center top / 100% 1px no-repeat;
 }
 :root[data-theme="light"] .section[data-tag]::after,
-:root[data-theme="light"] .cta-band[data-tag]::after { color: rgba(156, 122, 18, .72); }
+:root[data-theme="light"] .cta-band[data-tag]::after { color: rgba(108, 90, 31, .72); }
 
 /* Nav gets a gold "power trace" hairline */
 .nav::after {
@@ -590,15 +605,15 @@ body::before {
 
 :root[data-theme="light"] .page-ecosystem .card,
 :root[data-theme="light"] .page-ecosystem .pillar {
-  background: rgba(255, 255, 255, .86);
-  border-color: rgba(156, 122, 18, .40);
-  box-shadow: inset 0 0 0 1px rgba(14, 17, 23, .045);
+  background: rgba(230, 234, 240, .86);
+  border-color: rgba(108, 90, 31, .40);
+  box-shadow: inset 0 0 0 1px rgba(19, 27, 40, .045);
 }
 :root[data-theme="light"] .page-ecosystem .pillar::before {
-  background: linear-gradient(90deg, transparent, rgba(156, 122, 18, .55), transparent);
+  background: linear-gradient(90deg, transparent, rgba(108, 90, 31, .55), transparent);
 }
 :root[data-theme="light"] .page-ecosystem .table-wrap {
-  border-color: rgba(156, 122, 18, .35);
+  border-color: rgba(108, 90, 31, .35);
 }
 
 /* Scroll progress rail */
@@ -626,6 +641,10 @@ body::before {
 [data-theme="light"] .nav-brand > img { content: url("../assets/brad-devices-logos/svg/brad-devices-icon-black.svg"); }
 [data-theme="light"] .nav-brand .wm { content: url("../assets/brad-devices-wordmark/svg/brad-devices-wordmark-black.svg"); }
 [data-theme="light"] .nav-brand .brand-by .bv { content: url("../assets/brad-verse-wordmark/svg/brad-verse-wordmark-flat-light.svg"); }
+/* The hero ships the white lockup and nothing swapped it — on Mist that is a
+   white wordmark on white canvas, the exact defect The Architect spotted.
+   The hero wordmark follows the brand on both themes. */
+[data-theme="light"] .hero-inner > img { content: url("../assets/brad-devices-wordmark/svg/brad-devices-wordmark-black.svg"); }
 
 [data-theme="light"] .brand-line img { content: url("../assets/brad-devices-wordmark/svg/brad-devices-wordmark-black.svg"); }
 
@@ -1178,3 +1197,34 @@ html.has-lenis { scroll-behavior: auto !important; }
 @media (prefers-reduced-motion: reduce) {
   .now-card { opacity: 1; transform: none; }
 }
+
+/* ---- /docs/ the document index (generated by tools/gen_doc_index.py) ----
+   The index is server-rendered: every row is in the HTML, so a crawler reads
+   the whole tree and a browser without JavaScript still sees all of it. The
+   filter is an enhancement over that, never the thing that makes it readable. */
+.doc-index-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 20px 0 10px; }
+.doc-index-label { font-size: .82em; letter-spacing: .04em; text-transform: uppercase; color: var(--orbit-faint); }
+.doc-index-q {
+  flex: 1 1 260px; min-width: 200px; padding: 10px 12px; border-radius: 6px;
+  border: 1px solid var(--orbit-border-hi); background: var(--orbit-black-2);
+  color: var(--orbit-text); font: inherit; font-size: .95em;
+}
+.doc-index-q:focus { outline: 2px solid var(--brad-gold); outline-offset: 1px; }
+.doc-index-count { font-family: var(--font-mono); font-size: 12px; color: var(--brad-gold); letter-spacing: .06em; }
+.doc-index-note { color: var(--orbit-muted); font-size: .9rem; margin: 0 0 22px; max-width: 74ch; }
+.doc-index-group {
+  font-family: var(--font-mono); font-size: .8em; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--brad-gold); margin: 28px 0 8px; font-weight: 600;
+}
+.doc-index-gcount { color: var(--orbit-faint); margin-left: 8px; font-weight: 400; }
+.doc-index-table { font-size: .86rem; }
+.doc-index-table td { vertical-align: top; padding: 9px 12px; }
+.doc-index-table th { font-size: .74em; letter-spacing: .08em; text-transform: uppercase; color: var(--orbit-faint); }
+.doc-index-title { color: var(--orbit-text); }
+.doc-index-path { color: var(--orbit-faint); font-size: .76rem; word-break: break-all; max-width: 34ch; }
+.doc-index-state { white-space: nowrap; }
+.doc-index-declared { color: var(--orbit-faint); font-size: .74rem; white-space: normal; }
+.doc-index-none { color: var(--orbit-faint); }
+.doc-index-table tr.is-hidden { display: none; }
+.doc-index-group.is-empty { display: none; }
+.doc-index-table .num { text-align: right; color: var(--orbit-faint); font-family: var(--font-mono); font-size: .78rem; }

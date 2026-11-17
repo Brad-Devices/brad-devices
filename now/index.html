@@ -159,16 +159,16 @@
     </button>
     <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
     <nav class="nav-links" aria-label="Primary">
-      <a href="/achievements/">What ships</a>
-      <a href="/products/">The Products</a>
-      <a href="/ecosystem/">The Ecosystem</a>
-      <a href="/founder/">The Founder</a>
-      <a href="/journal/">The Journal</a>
-      <a href="/social/">Social</a>
-      <a href="/now/" class="active">Now</a>
-      <a href="/docs/">Spec Docs</a>
-        <a href="/glossary/">The Name Map</a>
-      <a href="/press/">Press Kit</a>
+      <a href="/achievements">What ships</a>
+      <a href="/products">The Products</a>
+      <a href="/ecosystem">The Ecosystem</a>
+      <a href="/founder">The Founder</a>
+      <a href="/journal">The Journal</a>
+      <a href="/social">Social</a>
+      <a href="/now" class="active">Now</a>
+      <a href="/docs">Spec Docs</a>
+        <a href="/glossary">The Name Map</a>
+      <a href="/press">Press Kit</a>
       <a class="nav-cta" href="/#proof">See it run</a>
     </nav>
   </div>
@@ -182,9 +182,9 @@
       what is <em>moving</em> — derived from the repository by the build
       itself, never typed by hand. If a stream stalls, the page is required
       to say so.</p>
-      <div class="proof">rendered from <code>7eccaa6</code> at build time
-        &middot; <a class="plain" href="/achievements/">what ships today</a>
-        &middot; <a class="plain" href="/journal/">where it started</a></div>
+      <div class="proof">rendered from <code>50b08df</code> at build time
+        &middot; <a class="plain" href="/achievements">what ships today</a>
+        &middot; <a class="plain" href="/journal">where it started</a></div>
     </div>
   </section>
   <section class="section" style="padding-top:0;">
@@ -236,7 +236,7 @@
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
       <h3>BradSense-Renderer — spatial (M0), temporal (M1) and metrics (M2)</h3>
       <p>Three milestones ship: the spatial core, the temporal core, and the metrics harness with golden diffs that keep the numbers honest. All public and receipted. The real-resolution corpus and M3–M4 stay open; what comes next in the pipeline stays moat.</p>
-      <div class="now-meta">last movement 2026-11-05 &middot; <a class="plain" href="/achievements/">what ships today</a></div>
+      <div class="now-meta">last movement 2026-11-05 &middot; <a class="plain" href="/achievements">what ships today</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
@@ -248,7 +248,19 @@
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
       <h3>This site — one motion stack</h3>
       <p>One motion engine where there were two: GSAP + ScrollTrigger + Lenis replaced the retired Motion One — vendored, hash-gated, reduced-motion-safe, no-JS-readable. Every reading page loads it; the deck is deliberately self-contained.</p>
-      <div class="now-meta">last movement 2026-11-13 &middot; <a class="plain" href="/">start from the front page</a></div>
+      <div class="now-meta">last movement 2026-11-17 &middot; <a class="plain" href="/">start from the front page</a></div>
+    </article>
+    <article class="card now-card">
+      <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
+      <h3>BradUI reference compositor — the first pixels</h3>
+      <p>A host-side reference compositor renders a 360x720 frame from the generated design tokens and checks itself: five checks, five passes. Damage is pixel-identical to a full repaint, a covered surface is skipped rather than rasterized (31,488 px), and three sampled pixels equal their tokens exactly. The checks found three bugs in the renderer itself -- inverted compositing order, bounding-box occlusion that hid a visible card, and a border band that selected the interior because the signed distance is negative inside a shape. 20.2 ms full repaint, 3.0 ms for one damaged region: a measurement of the reference path, not a claim about the product path.</p>
+      <div class="now-meta">last movement 2026-11-16 &middot; <a class="plain" href="https://brad-devices.vercel.app/now/">the workbench</a></div>
+    </article>
+    <article class="card now-card">
+      <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
+      <h3>Bradium — the design system, generated</h3>
+      <p>193 tokens compiled into 237 properties across two themes (dark-matter and light-matter), from one canonical source. The committed builds are verified by regenerating them in memory, so a stale build is a refusal rather than a note. The preview may only use generated tokens or declared preview-locals, and no colour literals at all.</p>
+      <div class="now-meta">last movement 2026-11-16 &middot; <a class="plain" href="https://brad-devices.vercel.app/now/">the workbench</a></div>
     </article></div>
     </div>
   </section>
@@ -258,17 +270,17 @@
       <p>The tail of the real commit log — the work as it happened, newest
       first. The full log is the repository.</p>
       <ul class="now-log">
-      <li><code>7eccaa6</code> <span>2026-11-16</span> the last-day link fix, and the ledger&#x27;s receipt for the deploy</li>
-      <li><code>25d9ae5</code> <span>2026-11-16</span> ledger: six procedure packs and the build the gates could not run (10af7a6)</li>
-      <li><code>10af7a6</code> <span>2026-11-16</span> six procedure packs, a gate for the packs, and the build the gate could not run</li>
-      <li><code>c6e49c9</code> <span>2026-11-14</span> ledger: the reference model speaks V2 and Phoenix gets its numbers (8a57e72)</li>
-      <li><code>8a57e72</code> <span>2026-11-14</span> two more Kinetic open items close: the reference model speaks V2, and Phoenix gets its numbers</li>
-      <li><code>fdf224e</code> <span>2026-11-14</span> ledger: the microarchitecture design session (b1041fc, 5f58869)</li>
-      <li><code>5f58869</code> <span>2026-11-14</span> microarchitecture design session: three decisions land in the owning docs</li>
-      <li><code>e8607bc</code> <span>2026-11-14</span> the interface stack gets its spine - BRADUI_STACK.md lays the whole pipeline out in thirteen layers,</li>
+      <li><code>50b08df</code> <span>2026-11-17</span> the compositor gets a voice and the mark gets a receipt: a Medium essay and a LinkedIn post, both wi</li>
+      <li><code>82ed96c</code> <span>2026-11-17</span> site: refresh generated numbers after the deploy&#x27;s own regeneration caught a stale set - the facts p</li>
+      <li><code>f6645b8</code> <span>2026-11-17</span> Merge branch &#x27;grandios/site&#x27;</li>
+      <li><code>9b55367</code> <span>2026-11-17</span> the light theme logotype now matches the canvas: the white wordmark becomes black on Mist, the favic</li>
+      <li><code>48c5fdf</code> <span>2026-11-16</span> the receipt for the deployment: 700cb33 went live - Light Matter (D-02, Mist, measured) and the bloc</li>
+      <li><code>700cb33</code> <span>2026-11-16</span> Merge branch &#x27;grandios/site&#x27;</li>
+      <li><code>8b50f42</code> <span>2026-11-16</span> the ledger records both receipts - Light Matter and the banner swap are in HISTORY and the digest&#x27;s </li>
+      <li><code>e5305eb</code> <span>2026-11-16</span> the site gets the skin it was owed: the light theme measured (not improvised), the terminal prints t</li>
       </ul>
       <div class="sfacts">
-        <div class="sfact"><span class="sfact-v">134</span><span class="sfact-k">documents in the corpus</span></div>
+        <div class="sfact"><span class="sfact-v">136</span><span class="sfact-k">documents in the corpus</span></div>
         <div class="sfact"><span class="sfact-v">22</span><span class="sfact-k">essays in the archive</span></div>
         <div class="sfact"><span class="sfact-v">4</span><span class="sfact-k">shipped toolchain tools</span></div>
       </div>
@@ -290,14 +302,14 @@
       <div>
         <h5>Explore</h5>
         <ul>
-          <li><a href="/achievements/">What ships today</a></li>
-          <li><a href="/ecosystem/">The ecosystem</a></li>
-          <li><a href="/products/">The product line</a></li>
-          <li><a href="/founder/">The founder</a></li>
-          <li><a href="/journal/">The journal</a></li>
-          <li><a href="/social/">The social profiles</a></li>
-          <li><a href="/now/">The live workbench</a></li>
-          <li><a href="/docs/">Spec docs</a></li>
+          <li><a href="/achievements">What ships today</a></li>
+          <li><a href="/ecosystem">The ecosystem</a></li>
+          <li><a href="/products">The product line</a></li>
+          <li><a href="/founder">The founder</a></li>
+          <li><a href="/journal">The journal</a></li>
+          <li><a href="/social">The social profiles</a></li>
+          <li><a href="/now">The live workbench</a></li>
+          <li><a href="/docs">Spec docs</a></li>
         </ul>
       </div>
       <div>

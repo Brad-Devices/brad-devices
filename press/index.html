@@ -161,16 +161,16 @@
     </button>
     <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
     <nav class="nav-links" aria-label="Primary">
-      <a href="/achievements/">What ships</a>
-      <a href="/products/">The Products</a>
-      <a href="/ecosystem/">The Ecosystem</a>
-      <a href="/founder/">The Founder</a>
-      <a href="/journal/">The Journal</a>
-      <a href="/social/">Social</a>
-      <a href="/now/">Now</a>
-      <a href="/docs/">Spec Docs</a>
-      <a href="/glossary/">The Name Map</a>
-      <a href="/press/" class="active">Press Kit</a>
+      <a href="/achievements">What ships</a>
+      <a href="/products">The Products</a>
+      <a href="/ecosystem">The Ecosystem</a>
+      <a href="/founder">The Founder</a>
+      <a href="/journal">The Journal</a>
+      <a href="/social">Social</a>
+      <a href="/now">Now</a>
+      <a href="/docs">Spec Docs</a>
+      <a href="/glossary">The Name Map</a>
+      <a href="/press" class="active">Press Kit</a>
       <a class="nav-cta" href="/#proof">See it run</a>
     </nav>
   </div>
@@ -316,7 +316,7 @@
         <tr><td>Wordmark</td><td>SVG</td><td><a href="/assets/brad-devices-wordmark/svg/brad-devices-wordmark-white.svg">white ↓</a> <a href="/assets/brad-devices-wordmark/svg/brad-devices-wordmark-black.svg">black ↓</a></td></tr>
         <tr><td>Full logo</td><td>PNG</td><td><a href="/assets/brad-devices-logos/png/brad-devices-full-transparent-black-fill-1024px.png">transparent ↓</a></td></tr>
         <tr><td>Brand guide</td><td>Markdown</td><td><a href="https://github.com/Brad-Devices/BradDevicesOfficial/blob/main/BRAND.md">on GitHub →</a></td></tr>
-        <tr><td>Pitch deck</td><td>HTML · prints to PDF</td><td><a href="/deck/">open &rarr;</a></td></tr>
+        <tr><td>Pitch deck</td><td>HTML · prints to PDF</td><td><a href="/deck">open &rarr;</a></td></tr>
         <tr><td>Prospectus</td><td>PDF</td><td><a href="/assets/BRAD_DEVICES_PROSPECTUS.pdf">Download &darr;</a></td></tr>
         <tr><td>News &amp; announcements</td><td>X</td><td><a href="https://x.com/BradDevices" target="_blank" rel="noopener">@BradDevices →</a></td></tr>
       </tbody>
@@ -334,13 +334,13 @@
     <div>
       <div class="footer-h">EXPLORE</div>
       <ul class="footer-links">
-        <li><a href="/achievements/">What ships</a></li>
-        <li><a href="/products/">The Products</a></li>
-        <li><a href="/ecosystem/">The Ecosystem</a></li>
-        <li><a href="/founder/">The Founder</a></li>
-        <li><a href="/docs/">Spec Docs</a></li>
-        <li><a href="/glossary/">The Name Map</a></li>
-        <li><a href="/press/" class="active">Press Kit</a></li>
+        <li><a href="/achievements">What ships</a></li>
+        <li><a href="/products">The Products</a></li>
+        <li><a href="/ecosystem">The Ecosystem</a></li>
+        <li><a href="/founder">The Founder</a></li>
+        <li><a href="/docs">Spec Docs</a></li>
+        <li><a href="/glossary">The Name Map</a></li>
+        <li><a href="/press" class="active">Press Kit</a></li>
         <li><a href="/#proof">See it run</a></li>
       </ul>
     </div>
@@ -351,15 +351,6 @@
 <script src="../vendor/ScrollTrigger.min.js"></script>
 <script src="../js/brad-ascii.js"></script>
 <script src="../js/app.js"></script>
-<script>
-  (function(){ var b=document.querySelector("[data-theme-toggle]"); var t=document.documentElement;
-    var m=document.querySelector('meta[name="theme-color"]'); if(!b) return;
-    b.addEventListener("click",function(){ var n=(t.getAttribute("data-theme")||"dark")==="dark"?"light":"dark";
-      t.setAttribute("data-theme",n); localStorage.setItem("brad-theme",n);
-      if(m) m.setAttribute("content", n==="dark"?"#0E1117":"#F5F7FA");
-      b.setAttribute("aria-label", n==="dark"?"Switch to light mode":"Switch to dark mode"); });
-    var p=localStorage.getItem("brad-theme"); if(p) t.setAttribute("data-theme",p);
-  })();
-</script>
+<script>try{var t=localStorage.getItem("bdTheme");if(t==="light")document.documentElement.setAttribute("data-theme","light");}catch(e){}</script>
 </body>
 </html>

@@ -1,0 +1,1365 @@
+{
+ "note": "The live Brad Devices corpus, generated from the build tree by tools/gen_doc_index.py. 'state' is the state's own declared state, mapped onto the site's badge vocabulary; 'declared' is the document's own phrase, verbatim. An empty 'state' means the document declares none. Paths are receipts that a file exists there -- these documents are not published by being listed.",
+ "documents": [
+  {
+   "path": "AGENTS.md",
+   "title": "read me before you touch anything",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 741,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "ARCHITECTURE.md",
+   "title": "Brad Devices Ecosystem — Architecture Diagrams",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 196,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "BRAD_DEVICES_COMPLETE_SPEC.md",
+   "title": "BRAD DEVICES — Complete Unified Specification",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 1737,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "BRAD_VS_APPLE.md",
+   "title": "Brad Devices Ecosystem vs Apple Ecosystem",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 170,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "HISTORY.md",
+   "title": "the journey, written in first person, every line a receipt",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 927,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "MASTER_INDEX.md",
+   "title": "Brad Devices Ecosystem — Master Index",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 421,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "NAMING_GUIDE.md",
+   "title": "Brad Devices Naming Guide — Consistency Audit",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 470,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "README.md",
+   "title": "README.md",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 57,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "REPO_DIGEST_2026-11-12.md",
+   "title": "REPO DIGEST — 2026-11-12",
+   "state": "RECORD",
+   "state_class": "gen2",
+   "declared": "READ COMPLETE",
+   "lines": 911,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "REPO_DIGEST_2026-11-16.md",
+   "title": "REPO DIGEST — 2026-11-16",
+   "state": "RECORD",
+   "state_class": "gen2",
+   "declared": "READ COMPLETE for the delta (16 Nov 2026). Git state at read time: clean",
+   "lines": 1189,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "ROADMAP.md",
+   "title": "Brad Devices — Product Roadmap Timeline",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 321,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "TASKS.md",
+   "title": "the live furnace — what I'm working on, right now",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 193,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "TRADEMARKS.md",
+   "title": "Trademarks and reserved marks",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 27,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "VISION.md",
+   "title": "Brad Devices — Future Vision & Technology Readiness",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 172,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": "VOICE.md",
+   "title": "how Brad Devices speaks",
+   "state": "",
+   "state_class": "",
+   "declared": "binding",
+   "lines": 178,
+   "group": "The book and the ledgers",
+   "group_key": "(root)"
+  },
+  {
+   "path": ".opencode/skills/bradisa/SKILL.md",
+   "title": "The BradISA track — the CPU ISA and the cores that run it",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 77,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": ".opencode/skills/bradkernel/SKILL.md",
+   "title": "The BradKernel track — one clone, one branch, no second copy",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 79,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": ".opencode/skills/bradvector/SKILL.md",
+   "title": "The BradVector track — software before silicon",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 115,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": ".opencode/skills/ci-triage/SKILL.md",
+   "title": "CI triage — Brad Devices",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 86,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": ".opencode/skills/drift-sweep/SKILL.md",
+   "title": "Drift sweep — the counting discipline",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 68,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": ".opencode/skills/kinetic/SKILL.md",
+   "title": "The Kinetic track — the CPU architecture",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 67,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": ".opencode/skills/publish/SKILL.md",
+   "title": "The publish gate — nothing public gets past this",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 112,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": ".opencode/skills/repo-digest/SKILL.md",
+   "title": "The repo digest — a handoff snapshot, never an authority",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 61,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": ".opencode/skills/repo-edit/SKILL.md",
+   "title": "The pre-edit ritual",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 80,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": ".opencode/skills/torox/SKILL.md",
+   "title": "The Torox track — the data-parallel architecture",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 71,
+   "group": "Procedure packs",
+   "group_key": ".opencode/"
+  },
+  {
+   "path": "Brad Devices/BRADCUBE_SPEC.md",
+   "title": "BradCube & BradCube X — Compact Desktop Spec",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping alongside the Kinetic generation.",
+   "lines": 105,
+   "group": "Products — the consumer line",
+   "group_key": "Brad Devices/"
+  },
+  {
+   "path": "Brad Devices/Console/BRADAXIS_SPEC.md",
+   "title": "BradAxis Console — Complete Spec",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping Holiday 2027.",
+   "lines": 305,
+   "group": "Products — the consumer line",
+   "group_key": "Brad Devices/"
+  },
+  {
+   "path": "Brad Devices/Display/SENTINELVIEW.md",
+   "title": "SentinelView — Brad Devices Monitor Line",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 157,
+   "group": "Products — the consumer line",
+   "group_key": "Brad Devices/"
+  },
+  {
+   "path": "Brad Devices/README.md",
+   "title": "Brad Devices — Devices Division",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 15,
+   "group": "Products — the consumer line",
+   "group_key": "Brad Devices/"
+  },
+  {
+   "path": "Brad Devices/Storage/BRADDRIVE_COMPRESS_ARCH.md",
+   "title": "BradDrive & BradCompress — Complete Storage Architecture",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 186,
+   "group": "Products — the consumer line",
+   "group_key": "Brad Devices/"
+  },
+  {
+   "path": "Brad Devices/VR and BradSkynet/BRADSKYNET_ASTRA_LABS.md",
+   "title": "BradSkynet, BradAstra & BradLabs — The Horizon",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "[Gen1] — referenced as existing partner / [Vision] — full captive foundry",
+   "lines": 170,
+   "group": "Products — the consumer line",
+   "group_key": "Brad Devices/"
+  },
+  {
+   "path": "Brad Devices/VR and BradSkynet/README.md",
+   "title": "VR & BradSkynet — under Brad Devices",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 11,
+   "group": "Products — the consumer line",
+   "group_key": "Brad Devices/"
+  },
+  {
+   "path": "Brad Devices/Vision/BRADVISION_COMPLETE.md",
+   "title": "BradVision — Complete Camera & Vision System",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 398,
+   "group": "Products — the consumer line",
+   "group_key": "Brad Devices/"
+  },
+  {
+   "path": "Brad Silicon/ARCHITECTURES.md",
+   "title": "Brad Devices — Architecture of Record",
+   "state": "DESIGNED",
+   "state_class": "ref",
+   "declared": "DESIGNED",
+   "lines": 265,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BRADSILICON_STRATEGY.md",
+   "title": "Brad Silicon Strategy — Market Entry & Licensing",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 194,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BradISA/ARCHITECTURE_GUIDE.md",
+   "title": "BradISA — Architecture Guide",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 108,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BradISA/ARCHITECTURE_REFERENCE_MODEL.md",
+   "title": "BradISA — Architecture Reference Model (ARM)",
+   "state": "",
+   "state_class": "",
+   "declared": "VSTATUS.VE, POWER, etc.",
+   "lines": 109,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BradISA/BRADISA_V2_ABI.md",
+   "title": "BradISA V2 — ABI and Register File (normative)",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 107,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BradISA/BRADISA_V2_ENCODING_PROPOSAL.md",
+   "title": "BradISA V2 — Encoding Growth Proposal",
+   "state": "PROPOSAL",
+   "state_class": "gen2",
+   "declared": "PROPOSAL",
+   "lines": 309,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BradISA/BRADISA_VS_RISCV.md",
+   "title": "BradISA vs RISC-V — The Honest Comparison",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 180,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BradISA/ISA_QUICK_REFERENCE.md",
+   "title": "BradISA — Quick Reference Card",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 296,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BradISA/KINETIC_MICROARCHITECTURE.md",
+   "title": "Kinetic Microarchitecture",
+   "state": "DESIGNED",
+   "state_class": "ref",
+   "declared": "DESIGNED",
+   "lines": 308,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BradISA/TOOLCHAIN_GUIDE.md",
+   "title": "BradISA — Shipped Reference Toolchain Guide",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 181,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/BradISA/TOOLCHAIN_STRATEGY.md",
+   "title": "Brad Toolchain Strategy — Assembler, Compiler, and Ecosystem",
+   "state": "",
+   "state_class": "",
+   "declared": "done",
+   "lines": 152,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/CPU/BRADCHIP.md",
+   "title": "BradChip — Unified SoC Package",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 124,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/CPU/EROE.md",
+   "title": "EROE — Eco-Render Optimization Engine",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 51,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/CPU/HYPERCORE_API_REF.md",
+   "title": "HyperCore Atlas — API Reference",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 289,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/CPU/HYPERCORE_ATLAS.md",
+   "title": "HyperCore Series & Atlas Architecture — Mobile SoC",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "Samsung tiered ladder (7LPP→SF4→SF4P→SF4X), shipping 2026.",
+   "lines": 252,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/CPU/HYPERCORE_REGMAP.md",
+   "title": "HyperCore Atlas — Register Map & Programming Model",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 244,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Compute/BME_MEDIA_ENGINE.md",
+   "title": "BME — Brad Media Engine",
+   "state": "DESIGNED",
+   "state_class": "ref",
+   "declared": "DESIGNED",
+   "lines": 247,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Compute/BRADAPEX_ACCELERATOR_SPEC.md",
+   "title": "BradApex — Datacenter AI & HPC Accelerator",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "design complete · [Gen2] production ramp 2027–2028 at Samsung SF4X (4 nm-class) partner fabs",
+   "lines": 237,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Compute/BRAD_COMPUTE_ARCHITECTURE.md",
+   "title": "Brad Compute Architecture — Unified Graphics & Accelerator Spec",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 311,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Compute/TOROX_COMPILER_PLAN.md",
+   "title": "Torox Compiler Plan",
+   "state": "PLAN",
+   "state_class": "gen2",
+   "declared": "PLAN",
+   "lines": 440,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Compute/TOROX_MICROARCHITECTURE.md",
+   "title": "Torox Microarchitecture",
+   "state": "DESIGNED",
+   "state_class": "ref",
+   "declared": "DESIGNED",
+   "lines": 485,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/GPU/BRADSENSE_RENDERER_PLAN.md",
+   "title": "BradSense-Render — Software Reference Upscaler (implementation plan)",
+   "state": "",
+   "state_class": "",
+   "declared": "M0–M2 shipped, M3–M4 planned — every shipped claim has a receipt in",
+   "lines": 199,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/GPU/BRADSENSE_RENDER_SPEC.md",
+   "title": "BradSense-Render — Neural Rendering Architecture",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "technology — shipping in all BradGfx and BradFx GPUs.",
+   "lines": 279,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/GPU/GPU_ARCH.md",
+   "title": "BradGfx & BradFx — Graphics Architecture Specification",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 311,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/GPU/GPU_COMPUTE.md",
+   "title": "Brad GPU — Compute Pipeline & Shader Architecture",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 331,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/GPU/GPU_DRIVER.md",
+   "title": "Brad GPU — Driver Programming Guide",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 282,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/GPU/GPU_ISA.md",
+   "title": "BradVector ISA — Instruction Set Architecture",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 303,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/GPU/GPU_MEMORY.md",
+   "title": "Brad GPU — Memory Model & Cache Hierarchy",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 281,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/GPU/GPU_REGMAP.md",
+   "title": "BradGfx & BradFx — Register Map & Programming Model",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 264,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Memory/BRADRAM_DDS.md",
+   "title": "BradRAM DDS — Dynamic Data-Sensing Architecture",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 234,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Memory/BRADRAM_POWER.md",
+   "title": "BradRAM — Power Management & Refresh Architecture",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 191,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Memory/BRADRAM_RAS.md",
+   "title": "BradRAM — RAS, ECC & Reliability",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 220,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Memory/BRADRAM_REGMAP.md",
+   "title": "BradRAM & SPMP — Register Map & Programming Model",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 242,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Memory/BRADRAM_SPMP_ARCH.md",
+   "title": "BradRAM & SPMP — Complete Memory Architecture",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 174,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Memory/BRADRAM_TIMING.md",
+   "title": "BradRAM — DRAM Timing Specification",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "industry 12nm-class DRAM process.",
+   "lines": 187,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Memory/BRADRAM_VMEM.md",
+   "title": "Brad Memory — Virtual Memory & Address Translation",
+   "state": "RECORD",
+   "state_class": "gen2",
+   "declared": "SUPERSEDED by `BRADABI",
+   "lines": 232,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Memory/MVRAM_RESEARCH.md",
+   "title": "MVRAM Memory Research",
+   "state": "",
+   "state_class": "",
+   "declared": "SPLIT — MVRAM findings VALID and in the spec; LPGDDR CLOSED, not pursued",
+   "lines": 202,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/NPU/BRADNPU_ARCH.md",
+   "title": "BradNPU — Neural Processing Unit Architecture",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 181,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/PIPELINE_SPEC.md",
+   "title": "Brad Devices Data Pipeline — Architectural Specification",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 263,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/PLATFORM_SPEC.md",
+   "title": "Brad Devices — Platform & Motherboard Architecture (BradBoard)",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 311,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/Platform/BRADBOARD_DEEP_DIVE.md",
+   "title": "BradBoard — Platform Architecture Deep-Dive",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 638,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Silicon/README.md",
+   "title": "Brad Silicon — Silicon Division",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 18,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Software/OS/BMS_SPEC.md",
+   "title": "Brad Mobile Services (BMS) — Complete Architecture",
+   "state": "",
+   "state_class": "",
+   "declared": "Vision",
+   "lines": 670,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADABI.md",
+   "title": "BradABI — the shared memory model",
+   "state": "PROPOSAL",
+   "state_class": "gen2",
+   "declared": "PROPOSED",
+   "lines": 197,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADCVT_DRIVERS.md",
+   "title": "Brad-CVT & Driver Suite",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 226,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADCVT_NEXT_RUNGS.md",
+   "title": "Brad-CVT — Next Rungs (v1 and beyond)",
+   "state": "SHIPPED",
+   "state_class": "live",
+   "declared": "SHIPPED — subset-doc update `42e6847`, implementation",
+   "lines": 125,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADCVT_PTX_SUBSET.md",
+   "title": "Brad-CVT PTX Subset — v0",
+   "state": "",
+   "state_class": "",
+   "declared": "IMPLEMENTED (v0 + Rung 1: 64-bit ld/st). This document describes the",
+   "lines": 417,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADKERNEL.md",
+   "title": "BradKernel — the charter",
+   "state": "DESIGNED",
+   "state_class": "ref",
+   "declared": "DESIGNED. The specification exists and is owned",
+   "lines": 331,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADKERNEL_ABI.md",
+   "title": "BradKernel ABI — the normative contracts",
+   "state": "DESIGNED",
+   "state_class": "ref",
+   "declared": "DESIGNED. Normative for the kernel, and for every driver, runtime,",
+   "lines": 700,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADKERNEL_BLOCKED.md",
+   "title": "BradKernel — Blocked Items Register",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 73,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADKERNEL_COHERENCE.md",
+   "title": "BradKernel coherence — the interface register",
+   "state": "DESIGNED",
+   "state_class": "ref",
+   "declared": "DESIGNED. This is the register of every interface the kernel",
+   "lines": 606,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADKERNEL_PLAN.md",
+   "title": "BradKernel — the plan",
+   "state": "DESIGNED",
+   "state_class": "ref",
+   "declared": "DESIGNED",
+   "lines": 422,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADKERNEL_SEED.md",
+   "title": "BradKernel — The Seed: Design Notes",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 123,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADKERNEL_TRAP_ENTRY.md",
+   "title": "BradKernel — Trap-Entry Sequence Specification",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 97,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADOS_COMPLETE.md",
+   "title": "BradOS & Brad Mobile Services — Complete Software Stack",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026.",
+   "lines": 237,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADOS_KERNEL_STRATEGY.md",
+   "title": "BradOS Software Strategy — Build, Borrow & the Honest Sequence",
+   "state": "",
+   "state_class": "",
+   "declared": "done",
+   "lines": 167,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADVECTOR_PLATFORM.md",
+   "title": "BradVector Platform — The Complete Reference",
+   "state": "",
+   "state_class": "",
+   "declared": "`[Gen1]` design intent for silicon; the reference software",
+   "lines": 851,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BRADVECTOR_PLATFORM_MOAT.md",
+   "title": "BradVector Platform — The Software Moat",
+   "state": "",
+   "state_class": "",
+   "declared": "Status",
+   "lines": 295,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BradUI/AEROFLUX_MATERIAL.md",
+   "title": "AeroFlux — Material Engine",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 246,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BradUI/BRADIUM_FOUNDATIONS.md",
+   "title": "Bradium — Foundations & Design Token Architecture",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 906,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BradUI/BRADOS_LOOK.md",
+   "title": "BradOS Look — The Design Language",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 493,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BradUI/BRADUI_COMPOSITOR.md",
+   "title": "BradUI Compositor & Display Path",
+   "state": "DESIGNED",
+   "state_class": "ref",
+   "declared": "DESIGNED — working draft `0.1.0`",
+   "lines": 412,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BradUI/BRADUI_DESIGN_SYSTEM.md",
+   "title": "BradUI — Design System & Interface Framework",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 707,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/BradUI/BRADUI_STACK.md",
+   "title": "BradUI — The Full Stack",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 485,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/OS/CUSTOM_TECH.md",
+   "title": "Brad Devices — Core Custom Technologies",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "shipping 2026",
+   "lines": 89,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "Brad Software/README.md",
+   "title": "Brad Software — Software Division",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 13,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
+   "path": "BradLabs/BRADLABS_FAB_STRATEGY.md",
+   "title": "BradLabs Fab Strategy — Samsung-Only Tiered Node Ladder",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 86,
+   "group": "Labs — fabrication",
+   "group_key": "BradLabs/"
+  },
+  {
+   "path": "BradLabs/README.md",
+   "title": "BradLabs — Fabrication Division",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 10,
+   "group": "Labs — fabrication",
+   "group_key": "BradLabs/"
+  },
+  {
+   "path": "COMPANY/COMPANY_STRUCTURE.md",
+   "title": "Brad Devices — Company Structure & Details",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 119,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/CORPORATE_AUDIT.md",
+   "title": "Brad Devices — Corporate Audit",
+   "state": "",
+   "state_class": "",
+   "declared": "AUDIT COMPLETE — mechanical fixes applied; 2 decisions pending",
+   "lines": 101,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/DIVISIONS.md",
+   "title": "Brad Devices — Company Divisions",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 26,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/EQUITY_PLAN.md",
+   "title": "Brad Devices — Equity Plan (Founder-First)",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 104,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/EXCELLENCE_STRATEGY.md",
+   "title": "Brad Devices — the Excellence Strategy",
+   "state": "PROPOSAL",
+   "state_class": "gen2",
+   "declared": "DRAFT — recommendation recorded, decision pending (The Architect)",
+   "lines": 178,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/EXTERNAL_AUDIT_2026-10.md",
+   "title": "Brad Devices — external audit, 29 Oct 2026",
+   "state": "",
+   "state_class": "",
+   "declared": "FINDINGS RECORDED — decisions pending (The Architect)",
+   "lines": 113,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/IP_PUBLICATION_POLICY.md",
+   "title": "IP Publication Policy — Brad Devices",
+   "state": "",
+   "state_class": "",
+   "declared": "policy",
+   "lines": 186,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/IP_REGISTRY.md",
+   "title": "Brad Devices — Unified IP Registry",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 222,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/NDA_TEMPLATE.md",
+   "title": "Brad Devices — Non-Disclosure Agreement (Template)",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 157,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/POLICIES.md",
+   "title": "Brad Devices — Company Policies",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 303,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "COMPANY/README.md",
+   "title": "COMPANY/ — the corporate folder map",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 27,
+   "group": "Company — structure, equity, IP, policies",
+   "group_key": "COMPANY/"
+  },
+  {
+   "path": "Medium/2026-10-the-receipts-one-year-later.md",
+   "title": "The Receipts, One Year Later",
+   "state": "",
+   "state_class": "",
+   "declared": "published",
+   "lines": 120,
+   "group": "Medium",
+   "group_key": "Medium/"
+  },
+  {
+   "path": "Medium/2026-11-the-first-pixels-of-brados.md",
+   "title": "The First Pixels of BradOS",
+   "state": "",
+   "state_class": "",
+   "declared": "draft",
+   "lines": 184,
+   "group": "Medium",
+   "group_key": "Medium/"
+  },
+  {
+   "path": "Medium/README.md",
+   "title": "Medium — published writing",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 133,
+   "group": "Medium",
+   "group_key": "Medium/"
+  },
+  {
+   "path": "brand/ascii/README.md",
+   "title": "brand/ascii — the ASCII mark of Brad Devices",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 77,
+   "group": "Brand",
+   "group_key": "brand/"
+  },
+  {
+   "path": "press/BRAD_DEVICES_PRESS_KIT.md",
+   "title": "Brad Devices — Press Kit",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 94,
+   "group": "Press and applications",
+   "group_key": "press/"
+  },
+  {
+   "path": "press/BRAD_DEVICES_PROSPECTUS.md",
+   "title": "Brad Devices — Prospectus",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 66,
+   "group": "Press and applications",
+   "group_key": "press/"
+  },
+  {
+   "path": "press/INDEXNOW_PING.md",
+   "title": "IndexNow ping — 2026-10-07",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 61,
+   "group": "Press and applications",
+   "group_key": "press/"
+  },
+  {
+   "path": "press/SEO_ENTITY.md",
+   "title": "Why \"Brad Devices\" was summarised as \"conceptually planned\"",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 186,
+   "group": "Press and applications",
+   "group_key": "press/"
+  },
+  {
+   "path": "press/THIEL_APPLICATION_ANSWERS.md",
+   "title": "Thiel Fellowship — application answers (working draft)",
+   "state": "",
+   "state_class": "",
+   "declared": "submitted 19 Oct 2026",
+   "lines": 583,
+   "group": "Press and applications",
+   "group_key": "press/"
+  },
+  {
+   "path": "press/THIEL_PROGRESS_LOG.md",
+   "title": "Thiel Fellowship — progress tracker",
+   "state": "PLAN",
+   "state_class": "gen2",
+   "declared": "TRACKING",
+   "lines": 270,
+   "group": "Press and applications",
+   "group_key": "press/"
+  },
+  {
+   "path": "press/THIEL_RESEARCH.md",
+   "title": "Thiel Fellowship — research brief",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 200,
+   "group": "Press and applications",
+   "group_key": "press/"
+  },
+  {
+   "path": "press/THIEL_SUBMISSION.md",
+   "title": "Thiel Fellowship — application answers",
+   "state": "RECORD",
+   "state_class": "gen2",
+   "declared": "SUBMITTED — 19 Oct 2026",
+   "lines": 149,
+   "group": "Press and applications",
+   "group_key": "press/"
+  },
+  {
+   "path": "press/THIEL_UPDATE_EMAIL.md",
+   "title": "The Thiel update email — one email, one headline, gated",
+   "state": "",
+   "state_class": "",
+   "declared": "SENT 16 Nov 2026. One email, in the window, with the preferred",
+   "lines": 269,
+   "group": "Press and applications",
+   "group_key": "press/"
+  },
+  {
+   "path": "site/vendor/MANIFEST.md",
+   "title": "Vendored third-party assets",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 32,
+   "group": "Site",
+   "group_key": "site/"
+  },
+  {
+   "path": "src/README.md",
+   "title": "Brad Devices — Reference Implementations",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 70,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/bms/README.md",
+   "title": "BMS reference API — Brad Mobile Services (v1)",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "software for BradOS, not something running today.",
+   "lines": 40,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/bms/api_v1.md",
+   "title": "BMS REST API — v1 (reference specification)",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 194,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/bradc-mini/README.md",
+   "title": "bradc-mini — TCC-class C-subset compiler for BradISA V2",
+   "state": "",
+   "state_class": "",
+   "declared": "v0, shipped as a library + test",
+   "lines": 64,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/braddev/README.md",
+   "title": "BradDev Kit — reference developer toolchain (BRADCVT_DRIVERS.md §6)",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 76,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/bradui/compositor/README.md",
+   "title": "bradui reference compositor",
+   "state": "",
+   "state_class": "",
+   "declared": "the host-side reference path renders and self-checks",
+   "lines": 112,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/bvlibs/README.md",
+   "title": "BVLibs — BradVector Math / Neural / Communication Libraries",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 128,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/rtl/README.md",
+   "title": "BradISA V2 — RTL Implementation Guide",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 135,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/tifa/README.md",
+   "title": "TIFA AI toolchain — reference SDK (`import tifa`)",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 42,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/tifa/api.md",
+   "title": "TIFA-SDK API — reference (Python)",
+   "state": "GEN 1",
+   "state_class": "gen1",
+   "declared": "accept real `torch.nn.Module` directly",
+   "lines": 96,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  }
+ ]
+}

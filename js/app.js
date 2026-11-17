@@ -49,6 +49,8 @@ function bradAsciiBanner(pre, name) {
   /* ---- Theme toggle + persistence ---- */
   var themeBtn = document.querySelector("[data-theme-toggle]");
   var themeMeta = document.querySelector('meta[name="theme-color"]');
+  var themeIcon = document.querySelector('link[rel~="icon"]');
+  var themeIconBase = themeIcon ? themeIcon.getAttribute("href") : null;
   function currentTheme() {
     return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
   }
@@ -56,7 +58,14 @@ function bradAsciiBanner(pre, name) {
     if (!themeBtn) return;
     var light = currentTheme() === "light";
     themeBtn.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
-    if (themeMeta) themeMeta.setAttribute("content", light ? "#F5F7FA" : "#0E1117");
+    if (themeMeta) themeMeta.setAttribute("content", light ? "#D9DEE5" : "#0E1117");
+    /* The white favicon is invisible on the light chrome rail — the icon
+       follows the theme like the wordmark does. */
+    if (themeIcon && themeIconBase) {
+      themeIcon.setAttribute("href", light
+        ? themeIconBase.replace("icon-white.svg", "icon-black.svg")
+        : themeIconBase);
+    }
   }
   if (themeBtn) {
     themeBtn.addEventListener("click", function () {
@@ -185,7 +194,7 @@ function bradAsciiBanner(pre, name) {
     var pre = document.createElement("div");
     pre.className = "term-body";
     host.appendChild(pre);
-    bradAsciiBanner(pre, "mini");
+    bradAsciiBanner(pre, "block");
 
     var i = 0;
     function type(text, onDone) {
@@ -355,7 +364,7 @@ function bradAsciiBanner(pre, name) {
       next();
     }
     window.BradWasm.load().then(function () {
-      bradAsciiBanner(pre, "mini");
+      bradAsciiBanner(pre, "block");
       run();
     }, function () {
       if (window.BradTerminal) window.BradTerminal(host, fallback, { speed: 1 });

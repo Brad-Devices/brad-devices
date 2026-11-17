@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://brad-devices.vercel.app/assets/og.png">
 <link rel="icon" type="image/png" href="../assets/brad-devices-logos/svg/brad-devices-icon-white.svg">
 <link rel="apple-touch-icon" href="../assets/brad-devices-logos/png/brad-devices-icon-transparent-white-fill-1024px.png">
-<script>try{var t=localStorage.getItem("brad-theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");}catch(e){}</script>
+<script>try{var t=localStorage.getItem("brad-theme");var i=document.querySelector('link[rel~="icon"]');if(t==="light"){document.documentElement.setAttribute("data-theme","light");if(i)i.setAttribute("href","../assets/brad-devices-logos/svg/brad-devices-icon-black.svg");}}catch(e){}</script>
 <style>
   /* Self-contained on purpose: the deck has to survive being opened from a
      USB stick, emailed as a single file, or viewed without the site. It borrows
@@ -32,9 +32,10 @@
     --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Roboto Mono",monospace;
   }
   :root[data-theme="light"]{
-    --bg:#F5F7FA; --bg2:#FFFFFF; --bg3:#E9EDF3; --line:#D6DEE9;
-    --text:#151B28; --muted:#46566C; --faint:#6B7A8F;
-    --gold:#7A5E10; --gold-l:#6E560E; --gold-d:#9C7A12; --live:#7A5E10;
+    /* Light Matter -- Platinum Mist, the D-02 resolution */
+    --bg:#D9DEE5; --bg2:#E6EAF0; --bg3:#EDF0F4; --line:#C3CBD5;
+    --text:#131B28; --muted:#3A4552; --faint:#5E6875;
+    --gold:#6C5A1F; --gold-l:#9A7E23; --gold-d:#3D351B; --live:#6C5A1F;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--sans)}
@@ -305,8 +306,8 @@
   <div class="kicker">The specification</div>
   <h2>Written down, cross-checked, public.</h2>
   <div class="grid2">
-    <div class="stat"><span class="n"><span data-fact="corpus_docs">135</span></span><span class="l">REFERENCE DOCUMENTS</span></div>
-    <div class="stat"><span class="n"><span data-fact="corpus_lines|comma">33,436</span></span><span class="l">LINES OF SPECIFICATION</span></div>
+    <div class="stat"><span class="n"><span data-fact="corpus_docs">136</span></span><span class="l">REFERENCE DOCUMENTS</span></div>
+    <div class="stat"><span class="n"><span data-fact="corpus_lines|comma">33,977</span></span><span class="l">LINES OF SPECIFICATION</span></div>
     <div class="stat"><span class="n"><span data-fact="book_lines|comma">1,737</span></span><span class="l">UNIFIED BOOK · 41 PAGES</span></div>
     <div class="stat"><span class="n"><span data-fact="glossary_names">119</span></span><span class="l">NAMES DEFINED</span></div>
   </div>
@@ -423,6 +424,10 @@
     var next = (root.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('brad-theme', next); } catch (e) {}
+    var icon = document.querySelector('link[rel~="icon"]');
+    if (icon) icon.setAttribute('href', next === 'light'
+      ? '../assets/brad-devices-logos/svg/brad-devices-icon-black.svg'
+      : '../assets/brad-devices-logos/svg/brad-devices-icon-white.svg');
   });
 
   // printed output is meant to be read, so it opens on the first slide and

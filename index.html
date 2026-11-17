@@ -191,16 +191,16 @@
     </button>
     <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
     <nav class="nav-links" aria-label="Primary">
-      <a href="/achievements/">What ships</a>
-      <a href="/products/">The Products</a>
-      <a href="/ecosystem/">The Ecosystem</a>
-      <a href="/founder/">The Founder</a>
-      <a href="/journal/">The Journal</a>
-      <a href="/social/">Social</a>
-      <a href="/now/">Now</a>
-      <a href="/docs/">Spec Docs</a>
-        <a href="/glossary/">The Name Map</a>
-      <a href="/press/">Press Kit</a>
+      <a href="/achievements">What ships</a>
+      <a href="/products">The Products</a>
+      <a href="/ecosystem">The Ecosystem</a>
+      <a href="/founder">The Founder</a>
+      <a href="/journal">The Journal</a>
+      <a href="/social">Social</a>
+      <a href="/now">Now</a>
+      <a href="/docs">Spec Docs</a>
+        <a href="/glossary">The Name Map</a>
+      <a href="/press">Press Kit</a>
       <a class="nav-cta" href="#proof">See it run</a>
     </nav>
   </div>
@@ -226,11 +226,11 @@
     I shipped the software first.</p>
     <div class="hero-actions">
       <a class="btn btn-gold" href="#proof">See what actually runs today</a>
-      <a class="btn btn-ghost" href="/founder/">Read my story</a>
+      <a class="btn btn-ghost" href="/founder">Read my story</a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="n">15</div><div class="l">YEARS OLD</div></div>
-      <div class="hero-stat"><div class="n" data-fact="corpus_docs">135</div><div class="l">REFERENCE SPEC DOCS</div></div>
+      <div class="hero-stat"><div class="n" data-fact="corpus_docs">136</div><div class="l">REFERENCE SPEC DOCS</div></div>
       <div class="hero-stat"><div class="n">1</div><div class="l">COHERENT ECOSYSTEM</div></div>
       <div class="hero-stat"><div class="n">0</div><div class="l">TALK. ONLY SHIPS.</div></div>
     </div>
@@ -379,8 +379,8 @@
     kept on disk, filed, and cross-referenced.</p>
 
     <div class="stat-wall reveal">
-      <div class="stat"><div class="num"><span data-count="135" data-count-key="corpus_docs" data-fact="corpus_docs">135</span></div><div class="lbl">Reference spec documents</div><div class="sub">one coherent architecture</div></div>
-      <div class="stat"><div class="num"><span data-count="33400" data-count-key="corpus_lines_floor100" data-fact="corpus_lines_floor100">33400</span><span class="suffix">+</span></div><div class="lbl">Lines of technical specification</div><div class="sub">every register &amp; wire</div></div>
+      <div class="stat"><div class="num"><span data-count="136" data-count-key="corpus_docs" data-fact="corpus_docs">136</span></div><div class="lbl">Reference spec documents</div><div class="sub">one coherent architecture</div></div>
+      <div class="stat"><div class="num"><span data-count="33900" data-count-key="corpus_lines_floor100" data-fact="corpus_lines_floor100">33900</span><span class="suffix">+</span></div><div class="lbl">Lines of technical specification</div><div class="sub">every register &amp; wire</div></div>
       <div class="stat"><div class="num"><span data-count="1737" data-count-key="book_lines" data-fact="book_lines">1737</span></div><div class="lbl">Line unified spec compendium</div><div class="sub">THE book · 41 pages, professionally drawn</div></div>
       <div class="stat"><div class="num"><span data-count="24" data-count-key="measured.ctest_total" data-fact="measured.ctest_total">24</span><span class="suffix" data-count-key="measured.ctest_total">/24</span></div><div class="lbl">Tests passing, automatically</div><div class="sub">ctest, on every push</div></div>
     </div>
@@ -429,7 +429,7 @@
         <span class="tag badge gen1">Gen 1 — designed</span>
         <p>The BradChip SoC fuses CPU, GPU, NPU and a custom fabric onto one die. Torox GPU dies — BGT, BFT, BAT — share one instruction set.</p>
         <ul><li>BradChip &amp; BradXon processors</li><li>Torox GPU family, one ISA</li><li>SPMP unified memory pool</li></ul>
-        <a href="/ecosystem/#silicon">The silicon story →</a>
+        <a href="/ecosystem#silicon">The silicon story →</a>
       </div>
       <div class="pillar">
         <h3>Memory</h3>
@@ -437,7 +437,7 @@
         <p>No "video RAM" vs "system RAM" war. BradRAM + SPMP is one unified pool with a controller-side L4
         cache the GPU reads like its own notebook.</p>
         <ul><li>BradRAM — JEDEC dies, L4 SRAM on the controller</li><li>SPMP — gigabytes, one pool</li><li>1200 Gb/s candidate-class fabric link</li></ul>
-        <a href="/ecosystem/#memory">The memory story →</a>
+        <a href="/ecosystem#memory">The memory story →</a>
       </div>
       <div class="pillar">
         <h3>Reconstruction</h3>
@@ -445,7 +445,7 @@
         <p>BradSense-Render rebuilds the frame, not just the pixels. The spatial core runs today with
         measured PSNR; the temporal ladder and the semantic experts are the road, tagged as such.</p>
         <ul><li>Real pixels, measured 2× PSNR</li><li>39.57 dB bicubic + sharpen</li><li>Temporal core queued as M1</li></ul>
-        <a href="/docs/#bradsense">The BradSense receipts →</a>
+        <a href="/docs#bradsense">The BradSense receipts →</a>
       </div>
       <div class="pillar">
         <h3>The Operating System</h3>
@@ -455,11 +455,11 @@
         shipped its software reference: a real spatial upscaler with measured 2× PSNR (39.43 dB bilinear,
         39.57 dB bicubic + sharpen), gated in CI. The hardware is designed; the math is proven.</p>
         <ul><li>BradOS across every device</li><li>one driver stack everywhere</li><li>7yr OS · 13yr hardware support</li></ul>
-        <a href="/ecosystem/#software">The software story →</a>
+        <a href="/ecosystem#software">The software story →</a>
       </div>
     </div>
     <div style="text-align:center; margin-top:40px;">
-      <a class="btn btn-ghost reveal" href="/ecosystem/">Explore the full ecosystem</a>
+      <a class="btn btn-ghost reveal" href="/ecosystem">Explore the full ecosystem</a>
     </div>
   </div>
 </section>
@@ -477,7 +477,7 @@
         inside them — and then teaching my own architecture to run before anyone else's did.</p>
         <p>No team, no VC, no lab. <strong>A laptop, an architecture, and the stubbornness to write every
         layer myself.</strong></p>
-        <a class="btn btn-ghost" href="/founder/">Read the full story</a>
+        <a class="btn btn-ghost" href="/founder">Read the full story</a>
       </div>
     </div>
   </div>
@@ -518,8 +518,8 @@
     <h2>You just watched a 15-year-old's architecture run.</h2>
     <p>The files are in the repo. The tests are green. The design is documented to the register.</p>
     <div class="hero-actions">
-      <a class="btn btn-gold" href="/achievements/">See everything shipped</a>
-      <a class="btn btn-ghost" href="/docs/">Read the full specification</a>
+      <a class="btn btn-gold" href="/achievements">See everything shipped</a>
+      <a class="btn btn-ghost" href="/docs">Read the full specification</a>
     </div>
   </div>
 </section>
@@ -540,14 +540,14 @@
       <div>
         <h5>Explore</h5>
         <ul>
-          <li><a href="/achievements/">What ships today</a></li>
-          <li><a href="/ecosystem/">The ecosystem</a></li>
-          <li><a href="/products/">The product line</a></li>
-          <li><a href="/founder/">The founder</a></li>
-          <li><a href="/journal/">The journal</a></li>
-          <li><a href="/social/">The social profiles</a></li>
-          <li><a href="/now/">The live workbench</a></li>
-          <li><a href="/docs/">Spec docs</a></li>
+          <li><a href="/achievements">What ships today</a></li>
+          <li><a href="/ecosystem">The ecosystem</a></li>
+          <li><a href="/products">The product line</a></li>
+          <li><a href="/founder">The founder</a></li>
+          <li><a href="/journal">The journal</a></li>
+          <li><a href="/social">The social profiles</a></li>
+          <li><a href="/now">The live workbench</a></li>
+          <li><a href="/docs">Spec docs</a></li>
         </ul>
       </div>
       <div>

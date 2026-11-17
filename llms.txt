@@ -14,7 +14,7 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 
 ## Provides
 
-- The one book: a 1,737-line unified compendium (eleven parts, 0–10 plus appendices, 135 documents) covering chips, GPUs, memory, OS, compute, software, console and roadmap — every register accounted for, with Gen 1 / Gen 2 / Vision tagging. Ships as a 41-page branded PDF.
+- The one book: a 1,737-line unified compendium (eleven parts, 0–10 plus appendices, 136 documents) covering chips, GPUs, memory, OS, compute, software, console and roadmap — every register accounted for, with Gen 1 / Gen 2 / Vision tagging. Ships as a 41-page branded PDF.
 - BradVector — the GPU/accelerator instruction-set architecture (dual-issue SIMT, 32-thread warps) that every Torox die runs: BradFx (integrated), BradGfx (dedicated), BradApex (datacenter). It is a separate ISA from the CPU-side BradISA; the two meet on the BradFusion fabric and share memory (SPMP), not instructions.
 - The Torox GPU family — BFT100 (integrated), BGT100 (dedicated), BAT100 (datacenter) — one die name, three jobs, one ISA from phone to rack.
 - The unified memory model — SPMP (DRAM pool) + BradRAM (JEDEC dies with the L4 SRAM assistant cache on the controller) + the Infinity Buffer, zero-copy between CPU, GPU and NPU.
@@ -22,11 +22,11 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - BradOS and the Kinetic and Torox drivers across Mobile, Slate, Compute and Nano.
 - The social profiles — every public account with the avatar each platform actually serves:
   3 of 4 profiles readable from outside and shown verbatim, the fourth (LinkedIn) marked unverifiable
-  rather than illustrated, because it serves a login wall: https://brad-devices.vercel.app/social/
+  rather than illustrated, because it serves a login wall: https://brad-devices.vercel.app/social
 - The journal — 22 founder essays archived verbatim in order, 2025 to 2026, each
   with its date, read time, word count and cover, plus the posts published since as the platform's own
   preview (text and image fetched, never retyped, no engagement counts):
-  https://brad-devices.vercel.app/journal/
+  https://brad-devices.vercel.app/journal
 - Selected writing by the founder — 22 essays on Medium. The most recent is
   "The Receipts, One Year Later" (2026-10-07): an account of the build with every figure linked to its
   receipt — https://medium.com/@bradleynyadimo/the-receipts-one-year-later-7fb289051805
@@ -56,7 +56,7 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - Graphics software: BradSense-Render (above) is the reconstruction engine; Neuro-Stream units are the on-die NPU hardware beside it.
 - Products: BradMatrix laptops (Essential → Ultra), BradOS Compute workstations/servers, and the BradAxis console (Torox GPU in a box, Nexus controller) — every product an instance of the same architecture.
 - The toolchain above ties all six parts together and ships first.
-- The live workbench: https://brad-devices.vercel.app/now/ — what is being built right now, derived from the repository by the build itself.
+- The live workbench: https://brad-devices.vercel.app/now — what is being built right now, derived from the repository by the build itself.
 
 ## Specifications (PDF)
 
@@ -69,8 +69,12 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - [Competitive analysis (10 pages)](https://brad-devices.vercel.app/assets/specs/competitive_analysis.pdf): whitespace vs the giants — the software-moat line is shipped.
 - [BradVector Core vs Intel (8 pages)](https://brad-devices.vercel.app/assets/specs/bradcore_vs_intel.pdf): core-by-core vs the incumbent — benchmark tables, honest rows.
 
-## Key documents in the 135-document design tree
+## Key documents in the 136-document design tree
 
+- The whole tree, as data: https://brad-devices.vercel.app/assets/doc_index.json —
+  every live document with its path, its length in lines, and the state the
+  document itself declares (a dash where it declares none). Generated from the
+  same walk that counts them, so the rows and the count cannot disagree.
 - BradVector ISA — the instruction set every Torox GPU shares (public: github.com/Brad-Devices/BradVector).
 - Torox GPU architecture — microarchitecture, die naming, the G1 registry.
 - Compute model — kernels, warps, scheduling, shared memory.
@@ -83,12 +87,12 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 ## Info pages
 
 - [Home](https://brad-devices.vercel.app/): the concise pitch and the receipts.
-- [Products](https://brad-devices.vercel.app/products/): every device tagged SHIPPED / DESIGNED / VISION.
-- [Ecosystem](https://brad-devices.vercel.app/ecosystem/): silicon, GPU, memory, OS, products and toolchain as one machine in six parts.
-- [Founder](https://brad-devices.vercel.app/founder/): Festus Bradley Nyadimo and the working-toolchain argument.
-- [Spec docs](https://brad-devices.vercel.app/docs/): the book, the branded spec set, and the 135-document tree.
-- [Achievements](https://brad-devices.vercel.app/achievements/): what actually ships, unattended in CI.
-- [Glossary](https://brad-devices.vercel.app/glossary/): the name map — one receipt line per name, including the micro-words (P/E core, NPU, ISA, SRAM, DRAM, GPU, SoC, fabric, die, stack).
+- [Products](https://brad-devices.vercel.app/products): every device tagged SHIPPED / DESIGNED / VISION.
+- [Ecosystem](https://brad-devices.vercel.app/ecosystem): silicon, GPU, memory, OS, products and toolchain as one machine in six parts.
+- [Founder](https://brad-devices.vercel.app/founder): Festus Bradley Nyadimo and the working-toolchain argument.
+- [Spec docs](https://brad-devices.vercel.app/docs): the book, the branded spec set, and the 136-document tree.
+- [Achievements](https://brad-devices.vercel.app/achievements): what actually ships, unattended in CI.
+- [Glossary](https://brad-devices.vercel.app/glossary): the name map — one receipt line per name, including the micro-words (P/E core, NPU, ISA, SRAM, DRAM, GPU, SoC, fabric, die, stack).
 
 ## How to verify
 
