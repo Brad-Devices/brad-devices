@@ -47,7 +47,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 927,
+   "lines": 952,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -97,7 +97,7 @@
    "state": "RECORD",
    "state_class": "gen2",
    "declared": "READ COMPLETE for the delta (16 Nov 2026). Git state at read time: clean",
-   "lines": 1189,
+   "lines": 1197,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -217,7 +217,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 112,
+   "lines": 117,
    "group": "Procedure packs",
    "group_key": ".opencode/"
   },
